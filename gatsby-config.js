@@ -29,36 +29,25 @@ module.exports = options => ({
             serialize: ({
               query: {
                 site,
-                allFile: { edges: posts }
+                allBlogPost: { edges: posts }
               }
             }) =>
-              posts.map(({ node: { childMarkdownRemark: post } }) => ({
-                ...post.frontmatter,
+              posts.map(({ node: post }) => ({
+                title: post.title,
                 description: post.excerpt,
-                date: post.frontmatter.date,
-                url: site.siteMetadata.siteUrl + post.fields.slug,
-                guid: site.siteMetadata.siteUrl + post.fields.slug,
-                custom_elements: [{ "content:encoded": post.html }]
+                date: post.date,
+                url: site.siteMetadata.siteUrl + post.slug,
+                guid: site.siteMetadata.siteUrl + post.slug
               })),
             query: `
               query BlogPostsForRSS {
-                allFile(filter: {sourceInstanceName: {eq: "blog"}}, sort: {order: DESC, fields: [childMarkdownRemark___frontmatter___date]}) {
+                allBlogPost(sort: {order: DESC, fields: date}) {
                   edges {
                     node {
-                      id
-                      name
-                      sourceInstanceName
-                      childMarkdownRemark {
-                        excerpt
-                        html
-                        fields {
-                          slug
-                        }
-                        frontmatter {
-                          title
-                          date
-                        }
-                      }
+                      date
+                      slug
+                      title
+                      excerpt
                     }
                   }
                 }
