@@ -5,7 +5,8 @@ module.exports = options => ({
       options: {
         basePath: options.basePath,
         contentPath: options.contentPath,
-        assetPath: options.assetPath
+        assetPath: options.assetPath,
+        mdx: options.mdx
       }
     },
     "gatsby-plugin-react-helmet",
