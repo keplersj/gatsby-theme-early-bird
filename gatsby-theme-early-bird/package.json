@@ -42,7 +42,7 @@
     "@emotion/core": "^10.0.22",
     "@mdx-js/react": "^1.5.0",
     "@types/react": "^16.9.3",
-    "@types/react-helmet": "^5.0.11",
+    "@types/react-helmet": "^5.0.13",
     "gatsby-plugin-emotion": "^4.1.9",
     "gatsby-plugin-feed": "^2.3.19",
     "gatsby-plugin-mdx": "^1.0.53",
