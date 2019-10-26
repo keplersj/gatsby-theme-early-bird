@@ -36,7 +36,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-test-renderer": "^16.11.0",
-    "semantic-release": "^15.13.27"
+    "semantic-release": "^15.13.28"
   },
   "dependencies": {
     "@emotion/core": "^10.0.22",
