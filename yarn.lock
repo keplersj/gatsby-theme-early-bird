@@ -9065,10 +9065,10 @@ jest-pnp-resolver@^1.2.1:
   resolved "https://registry.yarnpkg.com/jest-pnp-resolver/-/jest-pnp-resolver-1.2.1.tgz#ecdae604c077a7fbc70defb6d517c3c1c898923a"
   integrity sha512-pgFw2tm54fzgYvc/OHrnysABEObZCUNFnhjoRjaVOCN8NYc032/gVjPaHD4Aq6ApkSieWtfKAFQtmDKAmhupnQ==
 
-jest-preset-gatsby@^1.0.8:
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/jest-preset-gatsby/-/jest-preset-gatsby-1.0.12.tgz#3bf96e15c8111046f30c6d981e4438797fc4322c"
-  integrity sha512-sR2NPhjfOFVDqvd6bGzSOCCFfwEKclzEmUwiLXLzsZjU1042YbfNIujwyLTg2QvFe0JZ/1Vp2LB+QtFn9nRauA==
+jest-preset-gatsby@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/jest-preset-gatsby/-/jest-preset-gatsby-1.0.13.tgz#dd1e2db02081c7fcfb97abe9647ec34f15b5f345"
+  integrity sha512-pI88EetozwkxhLMy4fo2qsHw46xOkSm8YObtB3zVe4F06ntEZIohNb5ai7WhIM9eXFiNgJSYquzvNEya5fT1Dg==
   dependencies:
     "@babel/preset-typescript" "^7.3.3"
     babel-jest "^24.8.0"
