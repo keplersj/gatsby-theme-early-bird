@@ -1,12 +1,11 @@
 import React from "react";
-import { graphql } from "gatsby";
 import styled from "@emotion/styled";
 import BaseLayout from "../../layouts/Base";
 import { Helmet } from "react-helmet";
-import { BlogPostItem as Post } from "../../components/BlogPostItem";
+import { BlogPostItem as Post } from "../BlogPostItem";
 import { getDescription } from "../../util";
 
-const Posts = styled.div`
+const PostsContainer = styled.div`
   max-width: 55em;
   margin-left: auto;
   margin-right: auto;
@@ -36,7 +35,7 @@ interface Props {
   };
 }
 
-const BlogPage = ({ data }: Props): React.ReactElement<Props> => (
+export const Posts = ({ data }: Props): React.ReactElement<Props> => (
   <>
     <Helmet>
       <script type="application/ld+json">
@@ -97,7 +96,7 @@ const BlogPage = ({ data }: Props): React.ReactElement<Props> => (
     </Helmet>
 
     <BaseLayout title="Blog">
-      <Posts>
+      <PostsContainer>
         <h1>Blog</h1>
         <div>
           {data.allBlogPost.edges.map(
@@ -117,9 +116,7 @@ const BlogPage = ({ data }: Props): React.ReactElement<Props> => (
             )
           )}
         </div>
-      </Posts>
+      </PostsContainer>
     </BaseLayout>
   </>
 );
-
-export default BlogPage;
