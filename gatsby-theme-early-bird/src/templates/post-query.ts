@@ -21,7 +21,29 @@ export const query = graphql`
       date(formatString: "MMMM DD, YYYY")
       featuredImage {
         childImageSharp {
-          fluid(maxWidth: 1024, maxHeight: 576) {
+          # Generate Picture up to 8K 16:9 ration, crop and cover as appropriate
+          fluid(
+            maxWidth: 7680
+            maxHeight: 4320
+            cropFocus: CENTER
+            fit: COVER
+            srcSetBreakpoints: [
+              256
+              512
+              768
+              1024
+              # 720p
+              1280
+              # 1080p
+              1920
+              # 4k
+              3840
+              # 5k
+              5120
+              # 8k
+              7680
+            ]
+          ) {
             ...GatsbyImageSharpFluid
           }
         }

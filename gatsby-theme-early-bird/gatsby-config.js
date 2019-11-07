@@ -5,6 +5,10 @@ module.exports = themeOptions => {
   const { mdx = true } = themeOptions;
 
   return {
+    siteMetadata: {
+      title: "Blog Site",
+      description: "This is a blog built using gatsby-theme-early-bird"
+    },
     plugins: [
       mdx && {
         resolve: `gatsby-plugin-mdx`,
