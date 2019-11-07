@@ -6,7 +6,7 @@ const Debug = require("debug");
 const { createFilePath } = require("gatsby-source-filesystem");
 const { urlResolve } = require("gatsby-core-utils");
 
-const debug = Debug("gatsby-theme-blog-core");
+const debug = Debug("gatsby-theme-early-bird");
 const withDefaults = require("./utils/default-options");
 
 // Ensure that content directories exist at site-level
@@ -55,6 +55,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       tags: [String]!
       keywords: [String]!
       excerpt: String!
+      featuredImage: File
   }`);
 
   createTypes(
@@ -84,7 +85,8 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
         body: {
           type: "String!",
           resolve: mdxResolverPassthrough("body")
-        }
+        },
+        featuredImage: { type: "File", extensions: { fileByRelativePath: {} } }
       },
       interfaces: ["Node", "BlogPost"]
     })
@@ -131,12 +133,14 @@ exports.onCreateNode = async (
     }
     // normalize use of trailing slash
     slug = slug.replace(/\/*$/, "/");
+
     const fieldData = {
       title: node.frontmatter.title,
       tags: node.frontmatter.tags || [],
       slug,
       date: node.frontmatter.date,
-      keywords: node.frontmatter.keywords || []
+      keywords: node.frontmatter.keywords || [],
+      featuredImage: node.frontmatter.featured_image
     };
 
     const mdxBlogPostId = createNodeId(`${node.id} >>> MdxBlogPost`);

@@ -2,6 +2,9 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { Card } from "starstuff-components";
 
+const spanSeparatorCharacter = "⸱";
+const spanSeparator = ` ${spanSeparatorCharacter} `;
+
 interface Props {
   location: string;
   title: string;
@@ -24,12 +27,11 @@ export const BlogPostItem = (props: Props): React.ReactElement<Props> => (
       <>
         <div>
           <span>Published {props.publishDate}</span>
-          {/* <span>{" | "}</span>
+          {/* <span>{spanSeparator}</span>
           <span>{props.wordCount} words</span>
-          <span>{" | "}</span>
+          <span>{spanSeparator}</span>
           <span>{props.minutesNeededToRead} minute read</span> */}
         </div>
-        <div>{props.description}</div>
       </>
     }
   />

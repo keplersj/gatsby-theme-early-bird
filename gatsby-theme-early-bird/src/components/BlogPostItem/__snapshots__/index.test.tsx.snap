@@ -21,8 +21,5 @@ exports[`Blog Post List Item renders correctly 1`] = `
       December 18, 2018
     </span>
   </div>
-  <div>
-    This is a great test post.
-  </div>
 </div>
 `;

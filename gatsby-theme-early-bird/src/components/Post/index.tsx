@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import BaseLayout from "../../layouts/Base";
 import { Helmet } from "react-helmet";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import Image, { FluidObject } from "gatsby-image";
 import { getDescription } from "../../util";
 
 const Post = styled.article`
@@ -27,6 +28,11 @@ interface Props {
       tags: string[];
       keywords: string[];
       date: string;
+      featuredImage?: {
+        childImageSharp: {
+          fluid: FluidObject;
+        };
+      };
     };
   };
 }
@@ -112,8 +118,12 @@ export const PostTemplate = (props: Props): React.ReactElement<Props> => {
               <span>{" | "}</span>
               <span>{post.timeToRead} minute read</span> */}
             </div>
+            {post.featuredImage && (
+              <figure>
+                <Image fluid={post.featuredImage.childImageSharp.fluid} />
+              </figure>
+            )}
           </header>
-          {/* <br /> */}
           <MDXRenderer>{post.body}</MDXRenderer>
         </Post>
       </BaseLayout>
