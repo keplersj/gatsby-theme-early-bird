@@ -9353,10 +9353,10 @@ jest-resolve@^24.9.0:
     jest-pnp-resolver "^1.2.1"
     realpath-native "^1.1.0"
 
-jest-runner-prettier@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/jest-runner-prettier/-/jest-runner-prettier-0.3.2.tgz#a645e613ff283dd9fb67f42506820fd572d505eb"
-  integrity sha512-lAvSnZgJN2RNbGLMzjI8YndoAutR6uAVaDCKJqA3D87E2TG65Idx4SFd/nYluidNg/IfXhI4QaCOa8YQ7rjXxg==
+jest-runner-prettier@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/jest-runner-prettier/-/jest-runner-prettier-0.3.3.tgz#4de89221a1ec61b10fbc18ac502678d7b2ac3109"
+  integrity sha512-AFNul9NIWMoYV896+/RQfZqT+NOIr/Dte0ysYx5OETK9mKgfwo+crKjK+XZ06yaddeZwB66coJvPMP4Ew9wUaw==
   dependencies:
     cli-highlight "^2.1.1"
     create-jest-runner "^0.5.3"
