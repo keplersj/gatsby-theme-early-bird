@@ -77,6 +77,7 @@ export const PostTemplate = (props: Props): React.ReactElement<Props> => {
               headline: post.title,
               name: post.title,
               datePublished: post.date,
+              mainEntityOfPage: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
               image:
                 post.featuredImage &&
                 `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`
