@@ -74,7 +74,8 @@ module.exports = themeOptions => {
                   description: post.excerpt,
                   date: post.date,
                   url: site.siteMetadata.siteUrl + post.slug,
-                  guid: site.siteMetadata.siteUrl + post.slug
+                  guid: site.siteMetadata.siteUrl + post.slug,
+                  custom_elements: [{ "content:encoded": post.html }]
                 })),
               query: `
               query BlogPostsForRSS {
@@ -85,6 +86,7 @@ module.exports = themeOptions => {
                       slug
                       title
                       excerpt
+                      html
                     }
                   }
                 }

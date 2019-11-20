@@ -50,6 +50,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       id: ID!
       title: String!
       body: String!
+      html: String!
       slug: String!
       date: Date! @dateformat
       tags: [String]!
@@ -85,6 +86,10 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
         body: {
           type: "String!",
           resolve: mdxResolverPassthrough("body")
+        },
+        html: {
+          type: "String!",
+          resolve: mdxResolverPassthrough("html")
         },
         featuredImage: { type: "File", extensions: { fileByRelativePath: {} } }
       },
