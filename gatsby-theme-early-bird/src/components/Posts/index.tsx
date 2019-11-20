@@ -68,12 +68,7 @@ export const Posts = ({ data, location }: Props): React.ReactElement<Props> => {
               blogPost: data.allBlogPost.edges.map(
                 ({ node: post }): BlogPosting => ({
                   "@type": "BlogPosting",
-                  "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`,
-                  url: `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`,
-                  name: post.title,
-                  headline: post.title,
-                  datePublished: post.date,
-                  mainEntityOfPage: `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`
+                  "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`
                 })
               )
             } as Blog)

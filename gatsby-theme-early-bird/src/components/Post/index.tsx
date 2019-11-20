@@ -78,9 +78,10 @@ export const PostTemplate = (props: Props): React.ReactElement<Props> => {
               name: post.title,
               datePublished: post.date,
               mainEntityOfPage: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
-              image:
-                post.featuredImage &&
-                `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`
+              image: post.featuredImage && {
+                "@type": "ImageObject",
+                "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}#featured-image`
+              }
             } as BlogPosting)
           }}
         />
@@ -94,13 +95,14 @@ export const PostTemplate = (props: Props): React.ReactElement<Props> => {
               <span>{post.timeToRead} minute read</span> */}
           </div>
           {post.featuredImage && (
-            <figure>
+            <figure id="featured-image">
               <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
                   __html: JSON.stringify({
                     "@context": "http://www.schema.org",
                     "@type": "ImageObject",
+                    "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}#featured-image`,
                     representativeOfPage: true,
                     contentUrl: post.featuredImage.childImageSharp.fluid.src
                   } as ImageObject)
