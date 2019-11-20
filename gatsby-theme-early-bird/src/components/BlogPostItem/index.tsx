@@ -37,16 +37,19 @@ export const BlogPostItem = (props: Props): React.ReactElement<Props> => {
       )}
       supporting={
         <>
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "http://schema.org",
-              "@type": "BlogPosting",
-              "@id": `${data.site.siteMetadata.siteUrl}${props.location}`,
-              headline: props.title,
-              name: props.title,
-              datePublished: props.publishDate
-            } as BlogPosting)}
-          </script>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "http://schema.org",
+                "@type": "BlogPosting",
+                "@id": `${data.site.siteMetadata.siteUrl}${props.location}`,
+                headline: props.title,
+                name: props.title,
+                datePublished: props.publishDate
+              } as BlogPosting)
+            }}
+          />
           <div>
             <span>Published {props.publishDate}</span>
             {/* <span>{spanSeparator}</span>

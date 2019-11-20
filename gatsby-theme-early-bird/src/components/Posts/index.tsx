@@ -58,23 +58,26 @@ export const Posts = ({ data, location }: Props): React.ReactElement<Props> => {
   return (
     <BaseLayout title="Blog">
       <PostsContainer>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "http://www.schema.org",
-            "@type": "Blog",
-            "@id": `${staticQuery.site.siteMetadata.siteUrl}${location.pathname}`,
-            blogPost: data.allBlogPost.edges.map(
-              ({ node: post }): BlogPosting => ({
-                "@type": "BlogPosting",
-                "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`,
-                url: `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`,
-                name: post.title,
-                headline: post.title,
-                datePublished: post.date
-              })
-            )
-          } as Blog)}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "http://www.schema.org",
+              "@type": "Blog",
+              "@id": `${staticQuery.site.siteMetadata.siteUrl}${location.pathname}`,
+              blogPost: data.allBlogPost.edges.map(
+                ({ node: post }): BlogPosting => ({
+                  "@type": "BlogPosting",
+                  "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`,
+                  url: `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`,
+                  name: post.title,
+                  headline: post.title,
+                  datePublished: post.date
+                })
+              )
+            } as Blog)
+          }}
+        />
         <h1>Blog</h1>
         <div>
           {data.allBlogPost.edges.map(

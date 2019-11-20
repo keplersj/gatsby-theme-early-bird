@@ -66,20 +66,23 @@ export const PostTemplate = (props: Props): React.ReactElement<Props> => {
       description={post.excerpt}
     >
       <Post>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "http://www.schema.org",
-            "@type": "BlogPosting",
-            "@id": `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
-            url: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
-            headline: post.title,
-            name: post.title,
-            datePublished: post.date,
-            image:
-              post.featuredImage &&
-              `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`
-          } as BlogPosting)}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "http://www.schema.org",
+              "@type": "BlogPosting",
+              "@id": `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
+              url: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
+              headline: post.title,
+              name: post.title,
+              datePublished: post.date,
+              image:
+                post.featuredImage &&
+                `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`
+            } as BlogPosting)
+          }}
+        />
         <header>
           <h1>{post.title}</h1>
           <div>

@@ -16,10 +16,13 @@ exports[`Blog Post List Item renders correctly 1`] = `
     </h2>
   </a>
   <script
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "{\\"@context\\":\\"http://schema.org\\",\\"@type\\":\\"BlogPosting\\",\\"@id\\":\\"http://example.dev/test\\",\\"headline\\":\\"Test Post\\",\\"name\\":\\"Test Post\\",\\"datePublished\\":\\"December 18, 2018\\"}",
+      }
+    }
     type="application/ld+json"
-  >
-    {"@context":"http://schema.org","@type":"BlogPosting","@id":"http://example.dev/test","headline":"Test Post","name":"Test Post","datePublished":"December 18, 2018"}
-  </script>
+  />
   <div>
     <span>
       Published 
