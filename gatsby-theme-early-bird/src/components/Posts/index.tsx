@@ -72,7 +72,8 @@ export const Posts = ({ data, location }: Props): React.ReactElement<Props> => {
                   url: `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`,
                   name: post.title,
                   headline: post.title,
-                  datePublished: post.date
+                  datePublished: post.date,
+                  mainEntityOfPage: `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`
                 })
               )
             } as Blog)

@@ -18,7 +18,7 @@ exports[`Blog Post List Item renders correctly 1`] = `
   <script
     dangerouslySetInnerHTML={
       Object {
-        "__html": "{\\"@context\\":\\"http://schema.org\\",\\"@type\\":\\"BlogPosting\\",\\"@id\\":\\"http://example.dev/test\\",\\"headline\\":\\"Test Post\\",\\"name\\":\\"Test Post\\",\\"datePublished\\":\\"December 18, 2018\\"}",
+        "__html": "{\\"@context\\":\\"http://schema.org\\",\\"@type\\":\\"BlogPosting\\",\\"@id\\":\\"http://example.dev/test\\",\\"headline\\":\\"Test Post\\",\\"name\\":\\"Test Post\\",\\"datePublished\\":\\"December 18, 2018\\",\\"mainEntityOfPage\\":\\"http://example.dev/test\\"}",
       }
     }
     type="application/ld+json"

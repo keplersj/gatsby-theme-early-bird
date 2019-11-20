@@ -46,7 +46,8 @@ export const BlogPostItem = (props: Props): React.ReactElement<Props> => {
                 "@id": `${data.site.siteMetadata.siteUrl}${props.location}`,
                 headline: props.title,
                 name: props.title,
-                datePublished: props.publishDate
+                datePublished: props.publishDate,
+                mainEntityOfPage: `${data.site.siteMetadata.siteUrl}${props.location}`
               } as BlogPosting)
             }}
           />
