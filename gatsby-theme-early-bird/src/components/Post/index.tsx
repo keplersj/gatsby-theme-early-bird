@@ -7,6 +7,7 @@ import Image, { FluidObject } from "gatsby-image";
 import { getDescription } from "../../util";
 import { BlogPosting, ImageObject } from "schema-dts";
 import { useStaticQuery, graphql } from "gatsby";
+import { url } from "inspector";
 
 const Post = styled.article`
   max-width: 55em;
@@ -80,7 +81,7 @@ export const PostTemplate = (props: Props): React.ReactElement<Props> => {
               mainEntityOfPage: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
               image: post.featuredImage && {
                 "@type": "ImageObject",
-                "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}#featured-image`
+                "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`
               }
             } as BlogPosting)
           }}
@@ -102,9 +103,10 @@ export const PostTemplate = (props: Props): React.ReactElement<Props> => {
                   __html: JSON.stringify({
                     "@context": "http://www.schema.org",
                     "@type": "ImageObject",
-                    "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}#featured-image`,
+                    "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`,
                     representativeOfPage: true,
-                    contentUrl: post.featuredImage.childImageSharp.fluid.src
+                    contentUrl: post.featuredImage.childImageSharp.fluid.src,
+                    url: post.featuredImage.childImageSharp.fluid.src
                   } as ImageObject)
                 }}
               />
