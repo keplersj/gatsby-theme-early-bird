@@ -15,6 +15,11 @@ exports[`Blog Post List Item renders correctly 1`] = `
       Test Post
     </h2>
   </a>
+  <script
+    type="application/ld+json"
+  >
+    {"@context":"http://schema.org","@type":"BlogPosting","@id":"http://example.dev/test","headline":"Test Post","name":"Test Post","datePublished":"December 18, 2018"}
+  </script>
   <div>
     <span>
       Published 

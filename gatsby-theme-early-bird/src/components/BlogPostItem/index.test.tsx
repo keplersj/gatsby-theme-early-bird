@@ -1,8 +1,19 @@
 import * as React from "react";
 import renderer from "react-test-renderer";
+import { useStaticQuery } from "gatsby";
 import { BlogPostItem } from ".";
 
 describe("Blog Post List Item", (): void => {
+  beforeAll(() => {
+    (useStaticQuery as jest.Mock).mockImplementationOnce((): object => ({
+      site: {
+        siteMetadata: {
+          siteUrl: "http://example.dev"
+        }
+      }
+    }));
+  });
+
   it("renders correctly", (): void => {
     const tree = renderer
       .create(

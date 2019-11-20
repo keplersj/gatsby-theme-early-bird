@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "@emotion/styled";
 import BaseLayout from "../../layouts/Base";
-import { Helmet } from "react-helmet";
 import { BlogPostItem as Post } from "../BlogPostItem";
 import { getDescription } from "../../util";
+import { Blog, BlogPosting } from "schema-dts";
+import { useStaticQuery, graphql } from "gatsby";
 
 const PostsContainer = styled.div`
   max-width: 55em;
@@ -33,70 +34,47 @@ interface Props {
       }[];
     };
   };
+
+  location: {
+    key: string;
+    pathname: string;
+    search: string;
+    hash: string;
+    state: object;
+  };
 }
 
-export const Posts = ({ data }: Props): React.ReactElement<Props> => (
-  <>
-    <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "http://www.schema.org",
-          "@type": "CollectionPage",
-          name: "Blog | Kepler Sticka-Jones",
-          url: "/blog",
-          breadcrumb: {
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                item: {
-                  "@id": "https://keplersj.com/",
-                  name: "Kepler Sticka-Jones"
-                }
-              },
-              {
-                "@type": "ListItem",
-                position: 2,
-                item: {
-                  "@id": "https://keplersj.com/blog/",
-                  name: "Blog"
-                }
-              }
-            ]
-          },
-          about: {
-            "@type": "Blog",
-            url: "/blog",
-            blogPosts: data.allBlogPost.edges.map(({ node: post }): object => ({
-              "@type": "BlogPosting",
-              url: post.slug,
-              name: post.title,
-              headline: post.title,
-              datePublished: post.date,
-              // wordCount: post.wordCount.words,
-              description: getDescription(
-                post.excerpt
-                // post.frontmatter.description
-              ),
-              author: {
-                "@type": "Person",
-                name: "Kepler Sticka-Jones",
-                url: "https://keplersj.com"
-              },
-              publisher: {
-                "@type": "Person",
-                name: "Kepler Sticka-Jones",
-                url: "https://keplersj.com"
-              }
-            }))
-          }
-        })}
-      </script>
-    </Helmet>
+export const Posts = ({ data, location }: Props): React.ReactElement<Props> => {
+  const staticQuery = useStaticQuery(graphql`
+    query EarlyBirdPostsQuery {
+      site {
+        siteMetadata {
+          siteUrl
+        }
+      }
+    }
+  `);
 
+  return (
     <BaseLayout title="Blog">
       <PostsContainer>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "http://www.schema.org",
+            "@type": "Blog",
+            "@id": `${staticQuery.site.siteMetadata.siteUrl}${location.pathname}`,
+            blogPost: data.allBlogPost.edges.map(
+              ({ node: post }): BlogPosting => ({
+                "@type": "BlogPosting",
+                "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`,
+                url: `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`,
+                name: post.title,
+                headline: post.title,
+                datePublished: post.date
+              })
+            )
+          } as Blog)}
+        </script>
         <h1>Blog</h1>
         <div>
           {data.allBlogPost.edges.map(
@@ -118,5 +96,5 @@ export const Posts = ({ data }: Props): React.ReactElement<Props> => (
         </div>
       </PostsContainer>
     </BaseLayout>
-  </>
-);
+  );
+};
