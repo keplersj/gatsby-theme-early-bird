@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Image, { FluidObject } from "gatsby-image";
 import { getDescription } from "../../util";
-import { BlogPosting } from "schema-dts";
+import { BlogPosting, ImageObject } from "schema-dts";
 import { useStaticQuery, graphql } from "gatsby";
 
 const Post = styled.article`
@@ -95,6 +95,17 @@ export const PostTemplate = (props: Props): React.ReactElement<Props> => {
           </div>
           {post.featuredImage && (
             <figure>
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    "@context": "http://www.schema.org",
+                    "@type": "ImageObject",
+                    representativeOfPage: true,
+                    contentUrl: post.featuredImage.childImageSharp.fluid.src
+                  } as ImageObject)
+                }}
+              />
               <Image fluid={post.featuredImage.childImageSharp.fluid} />
             </figure>
           )}
