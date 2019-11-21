@@ -65,6 +65,7 @@ export const PostTemplate = (props: Props): React.ReactElement<Props> => {
       title={post.title}
       // description={getDescription(post.excerpt, post.description)}
       description={post.excerpt}
+      location={props.location}
     >
       <Post>
         <script

@@ -56,7 +56,7 @@ export const Posts = ({ data, location }: Props): React.ReactElement<Props> => {
   `);
 
   return (
-    <BaseLayout title="Blog">
+    <BaseLayout title="Blog" location={location}>
       <PostsContainer>
         <script
           type="application/ld+json"
