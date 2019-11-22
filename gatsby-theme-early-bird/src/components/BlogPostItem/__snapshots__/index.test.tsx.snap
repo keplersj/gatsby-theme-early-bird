@@ -19,7 +19,7 @@ exports[`Blog Post List Item renders correctly 1`] = `
     type="application/ld+json"
   >
     Object {
-    "@context": "http://schema.org",
+    "@context": "https://schema.org",
     "@id": "http://example.dev/test",
     "@type": "BlogPosting",
     "datePublished": "December 18, 2018",

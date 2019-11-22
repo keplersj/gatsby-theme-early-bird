@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { ListItem, BreadcrumbList } from "schema-dts";
 import "modern-normalize";
 import "starstuff-style";
+import { JsonLd } from "react-schemaorg";
 
 interface Props {
   title?: string;
@@ -55,8 +56,8 @@ const BaseLayout = (
         )}
 
         {props.location && (
-          <script type="application/ld+json">
-            {JSON.stringify({
+          <JsonLd<BreadcrumbList>
+            item={{
               "@context": "https://schema.org/",
               "@type": "BreadcrumbList",
               itemListElement: props.location.pathname
@@ -92,8 +93,8 @@ const BaseLayout = (
                     }
                   })
                 )
-            } as BreadcrumbList)}
-          </script>
+            }}
+          />
         )}
       </Helmet>
 

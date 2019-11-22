@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "@emotion/styled";
 import BaseLayout from "../../layouts/Base";
-import { Helmet } from "react-helmet";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Image, { FluidObject } from "gatsby-image";
-import { getDescription } from "../../util";
 import { BlogPosting, ImageObject } from "schema-dts";
 import { useStaticQuery, graphql } from "gatsby";
-import { url } from "inspector";
+import { JsonLd } from "react-schemaorg";
 
 const Post = styled.article`
   max-width: 55em;
@@ -68,23 +66,20 @@ export const PostTemplate = (props: Props): React.ReactElement<Props> => {
       location={props.location}
     >
       <Post>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "http://www.schema.org",
-              "@type": "BlogPosting",
-              "@id": `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
-              url: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
-              headline: post.title,
-              name: post.title,
-              datePublished: post.date,
-              mainEntityOfPage: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
-              image: post.featuredImage && {
-                "@type": "ImageObject",
-                "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`
-              }
-            } as BlogPosting)
+        <JsonLd<BlogPosting>
+          item={{
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "@id": `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
+            url: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
+            headline: post.title,
+            name: post.title,
+            datePublished: post.date,
+            mainEntityOfPage: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
+            image: post.featuredImage && {
+              "@type": "ImageObject",
+              "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`
+            }
           }}
         />
         <header>
@@ -98,17 +93,14 @@ export const PostTemplate = (props: Props): React.ReactElement<Props> => {
           </div>
           {post.featuredImage && (
             <figure id="featured-image">
-              <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                  __html: JSON.stringify({
-                    "@context": "http://www.schema.org",
-                    "@type": "ImageObject",
-                    "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`,
-                    representativeOfPage: true,
-                    contentUrl: post.featuredImage.childImageSharp.fluid.src,
-                    url: post.featuredImage.childImageSharp.fluid.src
-                  } as ImageObject)
+              <JsonLd<ImageObject>
+                item={{
+                  "@context": "https://schema.org",
+                  "@type": "ImageObject",
+                  "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`,
+                  representativeOfPage: true,
+                  contentUrl: post.featuredImage.childImageSharp.fluid.src,
+                  url: post.featuredImage.childImageSharp.fluid.src
                 }}
               />
               <Image fluid={post.featuredImage.childImageSharp.fluid} />

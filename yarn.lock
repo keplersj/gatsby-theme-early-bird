@@ -13458,6 +13458,11 @@ react-reconciler@^0.21.0:
     prop-types "^15.6.2"
     scheduler "^0.15.0"
 
+react-schemaorg@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-schemaorg/-/react-schemaorg-1.0.0.tgz#976a036a965eca597db8682455a2e7c8cd95f0b0"
+  integrity sha512-dMSxyXBeFB0A3VLpsGLMK8W1rMh05+N7YzlBgp0WLMqt+9Y1yHDCO/gR4+dK8lu9574kknYomeZr79woBtFRYw==
+
 react-side-effect@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-1.2.0.tgz#0e940c78faba0c73b9b0eba9cd3dda8dfb7e7dae"

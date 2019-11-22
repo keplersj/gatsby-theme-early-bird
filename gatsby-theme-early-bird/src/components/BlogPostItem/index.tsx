@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import { Card } from "starstuff-components";
 import { BlogPosting } from "schema-dts";
+import { JsonLd } from "react-schemaorg";
 
 const spanSeparatorCharacter = "⸱";
 const spanSeparator = ` ${spanSeparatorCharacter} `;
@@ -37,18 +38,15 @@ export const BlogPostItem = (props: Props): React.ReactElement<Props> => {
       )}
       supporting={
         <>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "http://schema.org",
-                "@type": "BlogPosting",
-                "@id": `${data.site.siteMetadata.siteUrl}${props.location}`,
-                headline: props.title,
-                name: props.title,
-                datePublished: props.publishDate,
-                mainEntityOfPage: `${data.site.siteMetadata.siteUrl}${props.location}`
-              } as BlogPosting)
+          <JsonLd<BlogPosting>
+            item={{
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "@id": `${data.site.siteMetadata.siteUrl}${props.location}`,
+              headline: props.title,
+              name: props.title,
+              datePublished: props.publishDate,
+              mainEntityOfPage: `${data.site.siteMetadata.siteUrl}${props.location}`
             }}
           />
           <div>

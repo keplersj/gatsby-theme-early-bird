@@ -5,6 +5,7 @@ import { BlogPostItem as Post } from "../BlogPostItem";
 import { getDescription } from "../../util";
 import { Blog, BlogPosting } from "schema-dts";
 import { useStaticQuery, graphql } from "gatsby";
+import { JsonLd } from "react-schemaorg";
 
 const PostsContainer = styled.div`
   max-width: 55em;
@@ -58,20 +59,17 @@ export const Posts = ({ data, location }: Props): React.ReactElement<Props> => {
   return (
     <BaseLayout title="Blog" location={location}>
       <PostsContainer>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "http://www.schema.org",
-              "@type": "Blog",
-              "@id": `${staticQuery.site.siteMetadata.siteUrl}${location.pathname}`,
-              blogPost: data.allBlogPost.edges.map(
-                ({ node: post }): BlogPosting => ({
-                  "@type": "BlogPosting",
-                  "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`
-                })
-              )
-            } as Blog)
+        <JsonLd<Blog>
+          item={{
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "@id": `${staticQuery.site.siteMetadata.siteUrl}${location.pathname}`,
+            blogPost: data.allBlogPost.edges.map(
+              ({ node: post }): BlogPosting => ({
+                "@type": "BlogPosting",
+                "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`
+              })
+            )
           }}
         />
         <h1>Blog</h1>
