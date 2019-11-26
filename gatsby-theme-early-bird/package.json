@@ -44,7 +44,7 @@
     "@mdx-js/react": "^1.5.0",
     "@types/react": "^16.9.13",
     "@types/react-helmet": "^5.0.14",
-    "gatsby-image": "^2.2.33",
+    "gatsby-image": "^2.2.34",
     "gatsby-plugin-emotion": "^4.1.15",
     "gatsby-plugin-feed": "^2.3.22",
     "gatsby-plugin-mdx": "^1.0.57",
