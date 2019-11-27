@@ -6,6 +6,7 @@ import { getDescription } from "../../util";
 import { Blog, BlogPosting } from "schema-dts";
 import { useStaticQuery, graphql } from "gatsby";
 import { JsonLd } from "react-schemaorg";
+import { FluidObject } from "gatsby-image";
 
 const PostsContainer = styled.div`
   max-width: 55em;
@@ -25,12 +26,15 @@ interface Props {
         node: {
           id: string;
           excerpt: string;
-          body: any;
           slug: string;
           title: string;
-          tags: string[];
-          keywords: string[];
+          isoDate: string;
           date: string;
+          featuredImage?: {
+            childImageSharp: {
+              fluid: FluidObject;
+            };
+          };
         };
       }[];
     };
@@ -87,6 +91,9 @@ export const Posts = ({ data, location }: Props): React.ReactElement<Props> => {
                   post.excerpt
                   // post.frontmatter.description
                 )}
+                image={
+                  post.featuredImage && post.featuredImage.childImageSharp.fluid
+                }
               />
             )
           )}
