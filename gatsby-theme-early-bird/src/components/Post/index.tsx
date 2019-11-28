@@ -28,6 +28,7 @@ interface Props {
       title: string;
       tags: string[];
       keywords: string[];
+      isoDate: string;
       date: string;
       featuredImage?: {
         childImageSharp: {
@@ -74,7 +75,7 @@ export const PostTemplate = (props: Props): React.ReactElement<Props> => {
             url: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
             headline: post.title,
             name: post.title,
-            datePublished: post.date,
+            datePublished: post.isoDate,
             mainEntityOfPage: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
             image: post.featuredImage && {
               "@type": "ImageObject",

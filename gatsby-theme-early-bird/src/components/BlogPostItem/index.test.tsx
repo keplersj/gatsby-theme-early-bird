@@ -22,6 +22,7 @@ describe("Blog Post List Item", (): void => {
           title="Test Post"
           description="This is a great test post."
           publishDate="December 18, 2018"
+          isoDate="2018-12-18"
           wordCount="42"
           minutesNeededToRead="42"
         />

@@ -85,6 +85,7 @@ export const Posts = ({ data, location }: Props): React.ReactElement<Props> => {
                 location={post.slug}
                 title={post.title}
                 publishDate={post.date}
+                isoDate={post.isoDate}
                 // wordCount={post.wordCount.words}
                 // minutesNeededToRead={post.timeToRead}
                 description={getDescription(

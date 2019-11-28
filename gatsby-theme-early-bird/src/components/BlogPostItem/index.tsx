@@ -42,6 +42,7 @@ interface Props {
   location: string;
   title: string;
   publishDate: string;
+  isoDate: string;
   wordCount?: string;
   minutesNeededToRead?: string;
   description: string;
@@ -68,7 +69,7 @@ export const BlogPostItem = (props: Props): React.ReactElement<Props> => {
           "@id": `${data.site.siteMetadata.siteUrl}${props.location}`,
           headline: props.title,
           name: props.title,
-          datePublished: props.publishDate,
+          datePublished: props.isoDate,
           mainEntityOfPage: `${data.site.siteMetadata.siteUrl}${props.location}`,
           image: props.image && {
             "@type": "ImageObject",

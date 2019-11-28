@@ -18,6 +18,7 @@ export const query = graphql`
       title
       tags
       keywords
+      isoDate: date
       date(formatString: "MMMM DD, YYYY")
       featuredImage {
         childImageSharp {
