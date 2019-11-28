@@ -6,6 +6,7 @@ import Image, { FluidObject } from "gatsby-image";
 import { BlogPosting, ImageObject } from "schema-dts";
 import { useStaticQuery, graphql } from "gatsby";
 import { JsonLd } from "react-schemaorg";
+import Helmet from "react-helmet";
 
 const Post = styled.article`
   max-width: 55em;
@@ -66,6 +67,26 @@ export const PostTemplate = (props: Props): React.ReactElement<Props> => {
       description={post.excerpt}
       location={props.location}
     >
+      <Helmet>
+        <meta property="og:type" content="article" />
+        <meta
+          property="article:published_time"
+          content={props.data.blogPost.isoDate}
+        />
+
+        {props.data.blogPost.featuredImage && (
+          <>
+            <meta
+              property="og:image"
+              content={
+                props.data.blogPost.featuredImage.childImageSharp.fluid.src
+              }
+            />
+            <meta property="og:image:width" content="7680" />
+            <meta property="og:image:height" content="4320" />
+          </>
+        )}
+      </Helmet>
       <Post>
         <JsonLd<BlogPosting>
           item={{
