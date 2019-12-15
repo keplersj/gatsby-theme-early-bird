@@ -25,7 +25,7 @@
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "@types/react-test-renderer": "^16.9.0",
-    "gatsby": "^2.18.11",
+    "gatsby": "^2.18.12",
     "jest": "^24.9.0",
     "jest-emotion": "^10.0.26",
     "jest-preset-gatsby": "^1.0.22",
