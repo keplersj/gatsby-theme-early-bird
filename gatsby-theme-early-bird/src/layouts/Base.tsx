@@ -5,6 +5,7 @@ import { ListItem, BreadcrumbList } from "schema-dts";
 import "modern-normalize";
 import "starstuff-style";
 import { JsonLd } from "react-schemaorg";
+import { breakdownURIPath } from "uri-path-breakdown";
 
 interface Props {
   title?: string;
@@ -58,41 +59,37 @@ const BaseLayout = (
         {props.location && (
           <JsonLd<BreadcrumbList>
             item={{
-              "@context": "https://schema.org/",
+              "@context": "https://schema.org",
               "@type": "BreadcrumbList",
-              itemListElement: props.location.pathname
-                // Remove Trailing Slash
-                .substr(0, props.location.pathname.length - 1)
-                // Break the path down to its (assumed hiearchy)
-                .split("/")
-                // Assuming every part of the path is a page, create all of the paths
-                .reduce((accumulator, value, currentIndex, array) => {
-                  if (accumulator.length === 0) {
-                    accumulator.push(["/", data.site.siteMetadata.title]);
-                  } else {
-                    accumulator.push([
-                      `${accumulator[accumulator.length - 1][0]}${value}/`,
-                      // If we're on the last crumb in the trail and there is a page title, use it. Otherwise...
-                      currentIndex === array.length - 1 && props.title
-                        ? props.title
-                        : // Take the value we have and capitalize it
-                          `${value[0].toUpperCase()}${value.slice(1)}`
-                    ]);
-                  }
-                  return accumulator;
-                }, [] as [string, string][])
-                // Make the path a schema.org ListItem
-                .map(
-                  ([part, name], index): ListItem => ({
+              itemListElement: breakdownURIPath(props.location.pathname).map(
+                (segment, index, baseArray): ListItem => {
+                  const getName = (): string => {
+                    if (segment === "/") {
+                      return data.site.siteMetadata.title;
+                    } else if (index === baseArray.length - 1 && props.title) {
+                      return props.title;
+                    }
+
+                    const [splitSegment] = segment
+                      .split("/")
+                      .filter(value => value != "")
+                      .slice(-1);
+                    return `${splitSegment[0].toUpperCase()}${splitSegment.slice(
+                      1
+                    )}`;
+                  };
+
+                  return {
                     "@type": "ListItem",
                     position: index + 1,
                     item: {
-                      "@id": `${data.site.siteMetadata.siteUrl}${part}`,
+                      "@id": `${data.site.siteMetadata.siteUrl}${segment}`,
                       "@type": "WebPage",
-                      name
+                      name: getName()
                     }
-                  })
-                )
+                  };
+                }
+              )
             }}
           />
         )}

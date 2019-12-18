@@ -63,7 +63,8 @@
     "schema-dts": "^0.4.5",
     "starstuff-components": "^1.2.5",
     "starstuff-style": "^1.0.3",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.3",
+    "uri-path-breakdown": "^1.0.0"
   },
   "peerDependencies": {
     "gatsby": "^2.13.13",
