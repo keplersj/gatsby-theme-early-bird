@@ -16,7 +16,7 @@ module.exports = {
       collectCoverage: true,
       snapshotSerializers: [
         "jest-emotion",
-        "jest-serializer-react-helmet",
+        "jest-serializer-react-helmet-async",
         "jest-serializer-json-ld-script"
       ],
       testPathIgnorePatterns

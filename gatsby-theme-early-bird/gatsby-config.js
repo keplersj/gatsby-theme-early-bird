@@ -45,7 +45,7 @@ module.exports = themeOptions => {
       },
       `gatsby-transformer-sharp`,
       `gatsby-plugin-sharp`,
-      "gatsby-plugin-react-helmet",
+      "gatsby-plugin-react-helmet-async",
       {
         resolve: "gatsby-plugin-feed",
         options: {
