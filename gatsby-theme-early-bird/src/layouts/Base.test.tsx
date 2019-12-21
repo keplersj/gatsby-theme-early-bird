@@ -38,13 +38,11 @@ describe("Base Layout", (): void => {
         <HelmetProvider context={context}>
           <Layout
             title="Test Post"
-            location={{
-              key: "test",
-              pathname: "/2016-11-9-test-post",
-              search: "",
-              hash: "test_hash",
-              state: {}
-            }}
+            location={
+              {
+                pathname: "/2016-11-9-test-post"
+              } as any
+            }
           >
             <span>Test</span>
           </Layout>

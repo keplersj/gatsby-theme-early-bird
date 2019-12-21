@@ -6,17 +6,12 @@ import "modern-normalize";
 import "starstuff-style";
 import { JsonLd } from "react-schemaorg";
 import { breakdownURIPath } from "uri-path-breakdown";
+import { WindowLocation } from "@reach/router";
 
 interface Props {
   title?: string;
   description?: string;
-  location?: {
-    key: string;
-    pathname: string;
-    search: string;
-    hash: string;
-    state: object;
-  };
+  location?: WindowLocation;
 }
 
 const BaseLayout = (

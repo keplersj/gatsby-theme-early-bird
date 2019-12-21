@@ -200,16 +200,12 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 
   // Create a page for each Post
   posts.forEach(({ node: post }, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1];
-    const next = index === 0 ? null : posts[index - 1];
     const { slug } = post;
     createPage({
       path: slug,
       component: PostTemplate,
       context: {
-        id: post.id,
-        previousId: previous ? previous.node.id : undefined,
-        nextId: next ? next.node.id : undefined
+        id: post.id
       }
     });
   });

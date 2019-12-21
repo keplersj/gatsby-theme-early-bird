@@ -4,7 +4,7 @@ import BaseLayout from "../../layouts/Base";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Image, { FluidObject } from "gatsby-image";
 import { BlogPosting, ImageObject } from "schema-dts";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, PageRendererProps } from "gatsby";
 import { JsonLd } from "react-schemaorg";
 import { Helmet } from "react-helmet-async";
 
@@ -19,7 +19,7 @@ const Post = styled.article`
   }
 `;
 
-interface Props {
+interface Props extends PageRendererProps {
   data: {
     blogPost: {
       id: string;
@@ -37,14 +37,6 @@ interface Props {
         };
       };
     };
-  };
-
-  location: {
-    key: string;
-    pathname: string;
-    search: string;
-    hash: string;
-    state: object;
   };
 }
 
@@ -134,3 +126,46 @@ export const PostTemplate = (props: Props): React.ReactElement<Props> => {
     </BaseLayout>
   );
 };
+
+export const fragment = graphql`
+  fragment EarlyBirdPostPage on BlogPost {
+    id
+    excerpt
+    body
+    slug
+    title
+    tags
+    keywords
+    isoDate: date
+    date(formatString: "MMMM DD, YYYY")
+    featuredImage {
+      childImageSharp {
+        # Generate Picture up to 8K 16:9 ratio, crop and cover as appropriate
+        fluid(
+          maxWidth: 7680
+          maxHeight: 4320
+          cropFocus: CENTER
+          fit: COVER
+          srcSetBreakpoints: [
+            256
+            512
+            768
+            1024
+            # 720p
+            1280
+            # 1080p
+            1920
+            # 4k
+            3840
+            # 5k
+            5120
+            # 8k
+            7680
+          ]
+        ) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
