@@ -8,8 +8,8 @@ beforeEach((): void => {
   (useStaticQuery as jest.Mock).mockImplementation((): object => ({
     site: {
       siteMetadata: {
-        title: "",
-        siteUrl: ""
+        title: "Test Site",
+        siteUrl: "https://example.dev"
       }
     }
   }));
@@ -31,15 +31,16 @@ describe("Base Layout", (): void => {
     expect(context.helmet).toMatchSnapshot();
   });
 
-  it("renders correctly with location provided", (): void => {
+  it("renders correctly with metadata provided", (): void => {
     const context: { helmet?: any } = {};
     const tree = renderer
       .create(
         <HelmetProvider context={context}>
           <Layout
+            title="Test Post"
             location={{
               key: "test",
-              pathname: "/2016-11-9",
+              pathname: "/2016-11-9-test-post",
               search: "",
               hash: "test_hash",
               state: {}

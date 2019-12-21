@@ -14,21 +14,21 @@ exports[`Base Layout renders correctly 2`] = `
 >
   <head>
     <meta
-      content=""
+      content="Test Site"
       data-rh={true}
       property="og:title"
     />
     <title
       data-rh={true}
     >
-      
+      Test Site
     </title>
   </head>
   <body />
 </html>
 `;
 
-exports[`Base Layout renders correctly with location provided 1`] = `
+exports[`Base Layout renders correctly with metadata provided 1`] = `
 <main>
   <script
     type="application/ld+json"
@@ -40,18 +40,18 @@ exports[`Base Layout renders correctly with location provided 1`] = `
       Object {
         "@type": "ListItem",
         "item": Object {
-          "@id": "/",
+          "@id": "https://example.dev/",
           "@type": "WebPage",
-          "name": "",
+          "name": "Test Site",
         },
         "position": 1,
       },
       Object {
         "@type": "ListItem",
         "item": Object {
-          "@id": "/2016-11-9",
+          "@id": "https://example.dev/2016-11-9-test-post",
           "@type": "WebPage",
-          "name": "2016-11-9",
+          "name": "Test Post",
         },
         "position": 2,
       },
@@ -64,20 +64,20 @@ exports[`Base Layout renders correctly with location provided 1`] = `
 </main>
 `;
 
-exports[`Base Layout renders correctly with location provided 2`] = `
+exports[`Base Layout renders correctly with metadata provided 2`] = `
 <html
   lang="en"
 >
   <head>
     <meta
-      content=""
+      content="Test Post | Test Site"
       data-rh={true}
       property="og:title"
     />
     <title
       data-rh={true}
     >
-      
+      Test Post | Test Site
     </title>
   </head>
   <body />
