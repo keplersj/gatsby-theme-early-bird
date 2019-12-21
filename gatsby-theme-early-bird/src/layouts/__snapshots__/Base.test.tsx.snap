@@ -27,3 +27,59 @@ exports[`Base Layout renders correctly 2`] = `
   <body />
 </html>
 `;
+
+exports[`Base Layout renders correctly with location provided 1`] = `
+<main>
+  <script
+    type="application/ld+json"
+  >
+    Object {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": Array [
+      Object {
+        "@type": "ListItem",
+        "item": Object {
+          "@id": "/",
+          "@type": "WebPage",
+          "name": "",
+        },
+        "position": 1,
+      },
+      Object {
+        "@type": "ListItem",
+        "item": Object {
+          "@id": "/2016-11-9",
+          "@type": "WebPage",
+          "name": "2016-11-9",
+        },
+        "position": 2,
+      },
+    ],
+  }
+  </script>
+  <span>
+    Test
+  </span>
+</main>
+`;
+
+exports[`Base Layout renders correctly with location provided 2`] = `
+<html
+  lang="en"
+>
+  <head>
+    <meta
+      content=""
+      data-rh={true}
+      property="og:title"
+    />
+    <title
+      data-rh={true}
+    >
+      
+    </title>
+  </head>
+  <body />
+</html>
+`;

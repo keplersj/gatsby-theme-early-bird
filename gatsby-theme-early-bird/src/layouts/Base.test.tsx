@@ -30,4 +30,27 @@ describe("Base Layout", (): void => {
     expect(tree).toMatchSnapshot();
     expect(context.helmet).toMatchSnapshot();
   });
+
+  it("renders correctly with location provided", (): void => {
+    const context: { helmet?: any } = {};
+    const tree = renderer
+      .create(
+        <HelmetProvider context={context}>
+          <Layout
+            location={{
+              key: "test",
+              pathname: "/2016-11-9",
+              search: "",
+              hash: "test_hash",
+              state: {}
+            }}
+          >
+            <span>Test</span>
+          </Layout>
+        </HelmetProvider>
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+    expect(context.helmet).toMatchSnapshot();
+  });
 });
