@@ -55,45 +55,45 @@ const BaseLayout = (
         {props.description && (
           <meta property="og:description" content={props.description} />
         )}
-
-        {props.location && (
-          <JsonLd<BreadcrumbList>
-            item={{
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: breakdownURIPath(props.location.pathname).map(
-                (segment, index, baseArray): ListItem => {
-                  const getName = (): string => {
-                    if (segment === "/") {
-                      return data.site.siteMetadata.title;
-                    } else if (index === baseArray.length - 1 && props.title) {
-                      return props.title;
-                    }
-
-                    const [splitSegment] = segment
-                      .split("/")
-                      .filter(value => value != "")
-                      .slice(-1);
-                    return `${splitSegment[0].toUpperCase()}${splitSegment.slice(
-                      1
-                    )}`;
-                  };
-
-                  return {
-                    "@type": "ListItem",
-                    position: index + 1,
-                    item: {
-                      "@id": `${data.site.siteMetadata.siteUrl}${segment}`,
-                      "@type": "WebPage",
-                      name: getName()
-                    }
-                  };
-                }
-              )
-            }}
-          />
-        )}
       </Helmet>
+
+      {props.location && (
+        <JsonLd<BreadcrumbList>
+          item={{
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: breakdownURIPath(props.location.pathname).map(
+              (segment, index, baseArray): ListItem => {
+                const getName = (): string => {
+                  if (segment === "/") {
+                    return data.site.siteMetadata.title;
+                  } else if (index === baseArray.length - 1 && props.title) {
+                    return props.title;
+                  }
+
+                  const [splitSegment] = segment
+                    .split("/")
+                    .filter(value => value != "")
+                    .slice(-1);
+                  return `${splitSegment[0].toUpperCase()}${splitSegment.slice(
+                    1
+                  )}`;
+                };
+
+                return {
+                  "@type": "ListItem",
+                  position: index + 1,
+                  item: {
+                    "@id": `${data.site.siteMetadata.siteUrl}${segment}`,
+                    "@type": "WebPage",
+                    name: getName()
+                  }
+                };
+              }
+            )
+          }}
+        />
+      )}
 
       {props.children}
     </main>

@@ -6,7 +6,7 @@ import Image, { FluidObject } from "gatsby-image";
 import { BlogPosting, ImageObject } from "schema-dts";
 import { useStaticQuery, graphql } from "gatsby";
 import { JsonLd } from "react-schemaorg";
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const Post = styled.article`
   max-width: 55em;
