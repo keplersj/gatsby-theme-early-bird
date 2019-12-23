@@ -2,7 +2,7 @@ const withDefaults = require(`./utils/default-options`);
 
 module.exports = themeOptions => {
   const options = withDefaults(themeOptions);
-  const { mdx = true } = themeOptions;
+  const { remark = true } = themeOptions;
 
   return {
     siteMetadata: {
@@ -10,11 +10,10 @@ module.exports = themeOptions => {
       description: "This is a blog built using gatsby-theme-early-bird"
     },
     plugins: [
-      mdx && {
-        resolve: `gatsby-plugin-mdx`,
+      remark && {
+        resolve: "gatsby-transformer-remark",
         options: {
-          extensions: [`.mdx`, `.md`],
-          gatsbyRemarkPlugins: [
+          plugins: [
             {
               resolve: `gatsby-remark-images`,
               options: {
@@ -25,8 +24,7 @@ module.exports = themeOptions => {
             },
             { resolve: `gatsby-remark-copy-linked-files` },
             { resolve: `gatsby-remark-smartypants` }
-          ],
-          remarkPlugins: [require(`remark-slug`)]
+          ]
         }
       },
       {

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
 import BaseLayout from "../../layouts/Base";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import Image, { FluidObject } from "gatsby-image";
 import { BlogPosting, ImageObject } from "schema-dts";
 import { useStaticQuery, graphql, PageRendererProps } from "gatsby";
@@ -24,7 +23,7 @@ interface Props extends PageRendererProps {
     blogPost: {
       id: string;
       excerpt: string;
-      body: any;
+      html: string;
       slug: string;
       title: string;
       tags: string[];
@@ -121,7 +120,7 @@ export const PostTemplate = (props: Props): React.ReactElement<Props> => {
             </figure>
           )}
         </header>
-        <MDXRenderer>{post.body}</MDXRenderer>
+        <section dangerouslySetInnerHTML={{ __html: post.html }} />
       </Post>
     </BaseLayout>
   );
@@ -131,7 +130,7 @@ export const fragment = graphql`
   fragment EarlyBirdPostPage on BlogPost {
     id
     excerpt
-    body
+    html
     slug
     title
     tags

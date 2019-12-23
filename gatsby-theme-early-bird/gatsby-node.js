@@ -27,18 +27,18 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
   });
 };
 
-const mdxResolverPassthrough = fieldName => async (
+const remarkResolverPassthrough = fieldName => async (
   source,
   args,
   context,
   info
 ) => {
-  const type = info.schema.getType("Mdx");
-  const mdxNode = context.nodeModel.getNodeById({
+  const type = info.schema.getType("MarkdownRemark");
+  const remarkNode = context.nodeModel.getNodeById({
     id: source.parent
   });
   const resolver = type.getFields()[fieldName].resolve;
-  const result = await resolver(mdxNode, args, context, {
+  const result = await resolver(remarkNode, args, context, {
     fieldName
   });
   return result;
@@ -49,7 +49,6 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
   createTypes(`interface BlogPost @nodeInterface {
       id: ID!
       title: String!
-      body: String!
       html: String!
       slug: String!
       date: Date! @dateformat
@@ -61,7 +60,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
 
   createTypes(
     schema.buildObjectType({
-      name: "MdxBlogPost",
+      name: "RemarkBlogPost",
       fields: {
         id: { type: "ID!" },
         title: {
@@ -81,15 +80,11 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
               defaultValue: 140
             }
           },
-          resolve: mdxResolverPassthrough("excerpt")
-        },
-        body: {
-          type: "String!",
-          resolve: mdxResolverPassthrough("body")
+          resolve: remarkResolverPassthrough("excerpt")
         },
         html: {
           type: "String!",
-          resolve: mdxResolverPassthrough("html")
+          resolve: remarkResolverPassthrough("html")
         },
         featuredImage: { type: "File", extensions: { fileByRelativePath: {} } }
       },
@@ -107,8 +102,7 @@ exports.onCreateNode = async (
   const { createNode, createParentChildLink } = actions;
   const { contentPath, basePath } = withDefaults(themeOptions);
 
-  // Make sure it's an MDX node
-  if (node.internal.type !== "Mdx") {
+  if (node.internal.type !== "MarkdownRemark") {
     return;
   }
 
@@ -116,7 +110,7 @@ exports.onCreateNode = async (
   const fileNode = getNode(node.parent);
   const source = fileNode.sourceInstanceName;
 
-  if (node.internal.type === "Mdx" && source === contentPath) {
+  if (node.internal.type === "MarkdownRemark" && source === contentPath) {
     let slug;
     if (node.frontmatter.slug) {
       if (path.isAbsolute(node.frontmatter.slug)) {
@@ -148,24 +142,24 @@ exports.onCreateNode = async (
       featuredImage: node.frontmatter.featured_image
     };
 
-    const mdxBlogPostId = createNodeId(`${node.id} >>> MdxBlogPost`);
+    const remarkBlogPostId = createNodeId(`${node.id} >>> RemarkBlogPost`);
     await createNode({
       ...fieldData,
       // Required fields.
-      id: mdxBlogPostId,
+      id: remarkBlogPostId,
       parent: node.id,
       children: [],
       internal: {
-        type: "MdxBlogPost",
+        type: "RemarkBlogPost",
         contentDigest: crypto
           .createHash("md5")
           .update(JSON.stringify(fieldData))
           .digest("hex"),
         content: JSON.stringify(fieldData),
-        description: "Mdx implementation of the BlogPost interface"
+        description: "Remark implementation of the BlogPost interface"
       }
     });
-    createParentChildLink({ parent: node, child: getNode(mdxBlogPostId) });
+    createParentChildLink({ parent: node, child: getNode(remarkBlogPostId) });
   }
 };
 
