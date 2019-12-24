@@ -6,6 +6,7 @@ import { BlogPosting, ImageObject } from "schema-dts";
 import { useStaticQuery, graphql, PageRendererProps } from "gatsby";
 import { JsonLd } from "react-schemaorg";
 import { Helmet } from "react-helmet-async";
+import { remarkForm } from "gatsby-tinacms-remark";
 
 const Post = styled.article`
   max-width: 55em;
@@ -39,92 +40,133 @@ interface Props extends PageRendererProps {
   };
 }
 
-export const PostTemplate = (props: Props): React.ReactElement<Props> => {
-  const post = props.data.blogPost;
-  const staticQuery = useStaticQuery(graphql`
-    query EarlyBirdPostQuery {
-      site {
-        siteMetadata {
-          siteUrl
+export const PostTemplate = remarkForm(
+  (props: Props): React.ReactElement<Props> => {
+    const post = props.data.blogPost;
+    const staticQuery = useStaticQuery(graphql`
+      query EarlyBirdPostQuery {
+        site {
+          siteMetadata {
+            siteUrl
+          }
         }
       }
-    }
-  `);
+    `);
 
-  return (
-    <BaseLayout
-      title={post.title}
-      // description={getDescription(post.excerpt, post.description)}
-      description={post.excerpt}
-      location={props.location}
-    >
-      <Helmet>
-        <meta property="og:type" content="article" />
-        <meta
-          property="article:published_time"
-          content={props.data.blogPost.isoDate}
-        />
+    return (
+      <BaseLayout
+        title={post.title}
+        // description={getDescription(post.excerpt, post.description)}
+        description={post.excerpt}
+        location={props.location}
+      >
+        <Helmet>
+          <meta property="og:type" content="article" />
+          <meta
+            property="article:published_time"
+            content={props.data.blogPost.isoDate}
+          />
 
-        {props.data.blogPost.featuredImage && (
-          <>
-            <meta
-              property="og:image"
-              content={
-                props.data.blogPost.featuredImage.childImageSharp.fluid.src
+          {props.data.blogPost.featuredImage && (
+            <>
+              <meta
+                property="og:image"
+                content={
+                  props.data.blogPost.featuredImage.childImageSharp.fluid.src
+                }
+              />
+              <meta property="og:image:width" content="7680" />
+              <meta property="og:image:height" content="4320" />
+            </>
+          )}
+        </Helmet>
+        <Post>
+          <JsonLd<BlogPosting>
+            item={{
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "@id": `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
+              url: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
+              headline: post.title,
+              name: post.title,
+              datePublished: post.isoDate,
+              mainEntityOfPage: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
+              image: post.featuredImage && {
+                "@type": "ImageObject",
+                "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`
               }
-            />
-            <meta property="og:image:width" content="7680" />
-            <meta property="og:image:height" content="4320" />
-          </>
-        )}
-      </Helmet>
-      <Post>
-        <JsonLd<BlogPosting>
-          item={{
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "@id": `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
-            url: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
-            headline: post.title,
-            name: post.title,
-            datePublished: post.isoDate,
-            mainEntityOfPage: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
-            image: post.featuredImage && {
-              "@type": "ImageObject",
-              "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`
-            }
-          }}
-        />
-        <header>
-          <h1>{post.title}</h1>
-          <div>
-            <span>Published {post.date}</span>
-            {/* <span>{" | "}</span>
+            }}
+          />
+          <header>
+            <h1>{post.title}</h1>
+            <div>
+              <span>Published {post.date}</span>
+              {/* <span>{" | "}</span>
               <span>{post.words} words</span>
               <span>{" | "}</span>
               <span>{post.timeToRead} minute read</span> */}
-          </div>
-          {post.featuredImage && (
-            <figure id="featured-image">
-              <JsonLd<ImageObject>
-                item={{
-                  "@context": "https://schema.org",
-                  "@type": "ImageObject",
-                  "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`,
-                  representativeOfPage: true,
-                  contentUrl: post.featuredImage.childImageSharp.fluid.src,
-                  url: post.featuredImage.childImageSharp.fluid.src
-                }}
-              />
-              <Image fluid={post.featuredImage.childImageSharp.fluid} />
-            </figure>
-          )}
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-      </Post>
-    </BaseLayout>
-  );
-};
+            </div>
+            {post.featuredImage && (
+              <figure id="featured-image">
+                <JsonLd<ImageObject>
+                  item={{
+                    "@context": "https://schema.org",
+                    "@type": "ImageObject",
+                    "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`,
+                    representativeOfPage: true,
+                    contentUrl: post.featuredImage.childImageSharp.fluid.src,
+                    url: post.featuredImage.childImageSharp.fluid.src
+                  }}
+                />
+                <Image fluid={post.featuredImage.childImageSharp.fluid} />
+              </figure>
+            )}
+          </header>
+          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        </Post>
+      </BaseLayout>
+    );
+  },
+  {
+    queryName: "blogPost",
+    label: "Blog Post",
+    fields: [
+      {
+        label: "Title",
+        name: "frontmatter.title",
+        description: "Enter the title of the post here",
+        component: "text"
+      },
+      {
+        label: "Date Published",
+        name: "frontmatter.date",
+        component: "date"
+      },
+      {
+        label: "Featured Image",
+        name: "frontmatter.featured_image",
+        component: "image",
+        previewSrc: ({ frontmatter }) =>
+          frontmatter.featured_image?.childImageSharp.fluid.src,
+        uploadDir: blogPost => {
+          let postPathParts = blogPost.fileRelativePath.split("/");
+
+          let postDirectory = postPathParts
+            .splice(0, postPathParts.length - 1)
+            .join("/");
+
+          return postDirectory;
+        }
+      } as any,
+      {
+        name: "rawMarkdownBody",
+        component: "markdown",
+        label: "Post Body",
+        description: "Edit the body of the post here"
+      }
+    ]
+  }
+);
 
 export const fragment = graphql`
   fragment EarlyBirdPostPage on BlogPost {
@@ -163,6 +205,22 @@ export const fragment = graphql`
           ]
         ) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    # Needed for TinaCMS
+    id
+    fileRelativePath
+    rawFrontmatter
+    rawMarkdownBody
+    ... on RemarkBlogPost {
+      frontmatter {
+        featured_image {
+          childImageSharp {
+            fluid {
+              src
+            }
+          }
         }
       }
     }
