@@ -4,7 +4,7 @@ import BaseLayout from "../../layouts/Base";
 import { BlogPostItem as Post } from "../BlogPostItem";
 import { getDescription } from "../../util";
 import { Blog, BlogPosting } from "schema-dts";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, PageRendererProps } from "gatsby";
 import { JsonLd } from "react-schemaorg";
 import { FluidObject } from "gatsby-image";
 import { usePlugin } from "tinacms";
@@ -21,7 +21,7 @@ const PostsContainer = styled.div`
   }
 `;
 
-interface Props {
+interface Props extends PageRendererProps {
   data: {
     allBlogPost: {
       edges: {
@@ -40,14 +40,6 @@ interface Props {
         };
       }[];
     };
-  };
-
-  location: {
-    key: string;
-    pathname: string;
-    search: string;
-    hash: string;
-    state: object;
   };
 }
 
