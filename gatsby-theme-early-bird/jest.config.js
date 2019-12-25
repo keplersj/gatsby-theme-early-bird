@@ -19,6 +19,10 @@ module.exports = {
         "jest-serializer-react-helmet-async",
         "jest-serializer-json-ld-script"
       ],
+      moduleNameMapper: {
+        "modern-normalize": "jest-transform-stub",
+        "starstuff-style": "jest-transform-stub"
+      },
       testPathIgnorePatterns
     },
     {
