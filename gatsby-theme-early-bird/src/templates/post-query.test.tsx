@@ -5,7 +5,7 @@ import { default as PostTemplate } from "./post-query";
 import { WindowLocation } from "@reach/router";
 import { HelmetProvider } from "react-helmet-async";
 
-describe("Post Page Component", () => {
+describe("Post Page", () => {
   beforeEach(() => {
     (useStaticQuery as jest.Mock).mockImplementation((): object => ({
       site: {

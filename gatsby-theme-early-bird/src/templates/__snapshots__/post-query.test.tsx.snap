@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Post Page Component renders as expected (with a featured image) 1`] = `
+exports[`Post Page renders as expected (with a featured image) 1`] = `
 .emotion-0 {
   max-width: 55em;
   margin-left: auto;
@@ -154,7 +154,7 @@ exports[`Post Page Component renders as expected (with a featured image) 1`] = `
 </main>
 `;
 
-exports[`Post Page Component renders as expected (with a featured image) 2`] = `
+exports[`Post Page renders as expected (with a featured image) 2`] = `
 <html
   lang="en"
 >
@@ -194,7 +194,7 @@ exports[`Post Page Component renders as expected (with a featured image) 2`] = `
 </html>
 `;
 
-exports[`Post Page Component renders as expected (without a featured image) 1`] = `
+exports[`Post Page renders as expected (without a featured image) 1`] = `
 .emotion-0 {
   max-width: 55em;
   margin-left: auto;
@@ -276,7 +276,7 @@ exports[`Post Page Component renders as expected (without a featured image) 1`] 
 </main>
 `;
 
-exports[`Post Page Component renders as expected (without a featured image) 2`] = `
+exports[`Post Page renders as expected (without a featured image) 2`] = `
 <html
   lang="en"
 >
