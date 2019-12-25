@@ -40,7 +40,7 @@ interface Props extends PageRendererProps {
   };
 }
 
-export const PostTemplate = remarkForm(
+export const PostTemplate: React.FunctionComponent<Props> = remarkForm(
   (props: Props): React.ReactElement<Props> => {
     const post = props.data.blogPost;
     const staticQuery = useStaticQuery(graphql`
