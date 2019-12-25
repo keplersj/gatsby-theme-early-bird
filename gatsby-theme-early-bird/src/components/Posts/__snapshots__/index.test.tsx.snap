@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Posts Page Component renders as expected 1`] = `
+.emotion-5 {
+  max-width: 55em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width:55em) {
+  .emotion-5 {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid;
+}
+
+@media screen and (min-width:512px) {
+  .emotion-1 {
+    min-height: 192px;
+  }
+}
+
+@media screen and (max-width:512px) {
+  .emotion-1 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+.emotion-0 {
+  margin: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-0:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.emotion-2 {
+  height: 100%;
+  min-width: 256px;
+}
+
+@media screen and (max-width:321px) {
+  .emotion-2 {
+    display: none;
+  }
+}
+
+<main>
+  <script
+    type="application/ld+json"
+  >
+    Object {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": Array [
+      Object {
+        "@type": "ListItem",
+        "item": Object {
+          "@id": "http://example.dev/",
+          "@type": "WebPage",
+          "name": "Test Site",
+        },
+        "position": 1,
+      },
+    ],
+  }
+  </script>
+  <div
+    className="emotion-5"
+  >
+    <script
+      type="application/ld+json"
+    >
+      Object {
+      "@context": "https://schema.org",
+      "@id": "http://example.dev/",
+      "@type": "Blog",
+      "blogPost": Array [
+        Object {
+          "@id": "http://example.dev/2019-12-24-test-post-without-featured-image",
+          "@type": "BlogPosting",
+        },
+        Object {
+          "@id": "http://example.dev/2019-12-24-test-post-with-featured-image",
+          "@type": "BlogPosting",
+        },
+      ],
+    }
+    </script>
+    <h1>
+      Blog
+    </h1>
+    <div>
+      <article
+        className="emotion-1"
+      >
+        <script
+          type="application/ld+json"
+        >
+          Object {
+          "@context": "https://schema.org",
+          "@id": "http://example.dev/2019-12-24-test-post-without-featured-image",
+          "@type": "BlogPosting",
+          "datePublished": "2019-12-24",
+          "headline": "Test Post (without Featured Image)",
+          "mainEntityOfPage": "http://example.dev/2019-12-24-test-post-without-featured-image",
+          "name": "Test Post (without Featured Image)",
+        }
+        </script>
+        <div
+          className="emotion-0"
+        >
+          <a
+            href="/2019-12-24-test-post-without-featured-image"
+          >
+            <h2>
+              Test Post (without Featured Image)
+            </h2>
+          </a>
+          <div>
+            <span>
+              Published 
+              Dec 24, 2019
+            </span>
+          </div>
+        </div>
+      </article>
+      <article
+        className="emotion-1"
+      >
+        <script
+          type="application/ld+json"
+        >
+          Object {
+          "@context": "https://schema.org",
+          "@id": "http://example.dev/2019-12-24-test-post-with-featured-image",
+          "@type": "BlogPosting",
+          "datePublished": "2019-12-25",
+          "headline": "Test Post (with Featured Image)",
+          "image": Object {
+            "@id": "http://example.dev/static/sample_image_1_hash/1/sample_image_1.jpeg",
+            "@type": "ImageObject",
+          },
+          "mainEntityOfPage": "http://example.dev/2019-12-24-test-post-with-featured-image",
+          "name": "Test Post (with Featured Image)",
+        }
+        </script>
+        <a
+          href="/2019-12-24-test-post-with-featured-image"
+        >
+          <figure
+            className="emotion-2"
+          >
+            <script
+              type="application/ld+json"
+            >
+              Object {
+              "@context": "https://schema.org",
+              "@id": "http://example.dev/static/sample_image_1_hash/1/sample_image_1.jpeg",
+              "@type": "ImageObject",
+              "contentUrl": "/static/sample_image_1_hash/1/sample_image_1.jpeg",
+              "representativeOfPage": false,
+              "url": "/static/sample_image_1_hash/1/sample_image_1.jpeg",
+            }
+            </script>
+            <div
+              className=" gatsby-image-wrapper"
+              style={
+                Object {
+                  "overflow": "hidden",
+                  "position": "relative",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "paddingBottom": "100%",
+                    "width": "100%",
+                  }
+                }
+              />
+              <picture>
+                <source
+                  sizes="(min-width 512px)"
+                  srcSet="/static/sample_image_1_hash/1/sample_image_1.jpeg 1x"
+                />
+                <img
+                  alt=""
+                  loading="lazy"
+                  onLoad={[Function]}
+                  sizes="(min-width 512px)"
+                  src="/static/sample_image_1_hash/1/sample_image_1.jpeg"
+                  srcSet="/static/sample_image_1_hash/1/sample_image_1.jpeg 1x"
+                  style={
+                    Object {
+                      "height": "100%",
+                      "left": 0,
+                      "objectFit": "cover",
+                      "objectPosition": "center",
+                      "opacity": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "transition": "opacity 500ms",
+                      "width": "100%",
+                    }
+                  }
+                />
+              </picture>
+              <noscript
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<picture><source srcset=\\"/static/sample_image_1_hash/1/sample_image_1.jpeg 1x\\" sizes=\\"(min-width 512px)\\" /><img loading=\\"lazy\\" sizes=\\"(min-width 512px)\\" srcset=\\"/static/sample_image_1_hash/1/sample_image_1.jpeg 1x\\" src=\\"/static/sample_image_1_hash/1/sample_image_1.jpeg\\" alt=\\"\\" style=\\"position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
+                  }
+                }
+              />
+            </div>
+          </figure>
+        </a>
+        <div
+          className="emotion-0"
+        >
+          <a
+            href="/2019-12-24-test-post-with-featured-image"
+          >
+            <h2>
+              Test Post (with Featured Image)
+            </h2>
+          </a>
+          <div>
+            <span>
+              Published 
+              Dec 25, 2019
+            </span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</main>
+`;
+
+exports[`Posts Page Component renders as expected 2`] = `
+<html
+  lang="en"
+>
+  <head>
+    <meta
+      content="Blog | Test Site"
+      data-rh={true}
+      property="og:title"
+    />
+    <title
+      data-rh={true}
+    >
+      Blog | Test Site
+    </title>
+  </head>
+  <body />
+</html>
+`;
