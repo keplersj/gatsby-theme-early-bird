@@ -147,17 +147,10 @@ export const PostTemplate: React.FunctionComponent<Props> = remarkForm(
         label: "Featured Image",
         name: "frontmatter.featured_image",
         component: "image",
+        parse: filename => `../assets/${filename}`,
+        uploadDir: blogPost => "/content/assets/",
         previewSrc: ({ frontmatter }) =>
-          frontmatter.featured_image?.childImageSharp.fluid.src,
-        uploadDir: blogPost => {
-          let postPathParts = blogPost.fileRelativePath.split("/");
-
-          let postDirectory = postPathParts
-            .splice(0, postPathParts.length - 1)
-            .join("/");
-
-          return postDirectory;
-        }
+          frontmatter.featured_image?.childImageSharp.fluid.src
       } as any,
       {
         name: "rawMarkdownBody",
