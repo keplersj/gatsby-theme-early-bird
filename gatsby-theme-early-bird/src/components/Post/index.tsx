@@ -6,7 +6,7 @@ import { BlogPosting, ImageObject } from "schema-dts";
 import { useStaticQuery, graphql, PageRendererProps } from "gatsby";
 import { JsonLd } from "react-schemaorg";
 import { Helmet } from "react-helmet-async";
-import { remarkForm } from "gatsby-tinacms-remark";
+import { remarkForm, DeleteAction } from "gatsby-tinacms-remark";
 
 const Post = styled.article`
   max-width: 55em;
@@ -130,6 +130,7 @@ export const PostTemplate = remarkForm(
   {
     queryName: "blogPost",
     label: "Blog Post",
+    actions: [DeleteAction],
     fields: [
       {
         label: "Title",

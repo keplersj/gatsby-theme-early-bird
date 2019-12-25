@@ -7,6 +7,8 @@ import { Blog, BlogPosting } from "schema-dts";
 import { useStaticQuery, graphql } from "gatsby";
 import { JsonLd } from "react-schemaorg";
 import { FluidObject } from "gatsby-image";
+import { usePlugin } from "tinacms";
+import { CreatePostPlugin } from "../../lib/tinacms-creator-plugin";
 
 const PostsContainer = styled.div`
   max-width: 55em;
@@ -59,6 +61,7 @@ export const Posts = ({ data, location }: Props): React.ReactElement<Props> => {
       }
     }
   `);
+  usePlugin(CreatePostPlugin);
 
   return (
     <BaseLayout title="Blog" location={location}>
