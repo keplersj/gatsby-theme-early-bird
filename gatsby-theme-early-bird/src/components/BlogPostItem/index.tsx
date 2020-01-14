@@ -33,6 +33,11 @@ const FeaturedImage = styled.figure`
 const StyledImage = styled(Image)`
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+
+  @media screen and (max-width: 512px) {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
+  }
 `;
 
 const Info = styled.div`

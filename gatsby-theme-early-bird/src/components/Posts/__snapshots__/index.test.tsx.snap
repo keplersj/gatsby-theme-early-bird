@@ -79,6 +79,13 @@ exports[`Posts Page Component renders as expected 1`] = `
   border-bottom-left-radius: 10px;
 }
 
+@media screen and (max-width:512px) {
+  .emotion-2 {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
+  }
+}
+
 <main>
   <script
     type="application/ld+json"
