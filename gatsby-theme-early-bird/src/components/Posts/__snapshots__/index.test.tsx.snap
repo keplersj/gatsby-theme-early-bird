@@ -1,25 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Posts Page Component renders as expected 1`] = `
-.emotion-5 {
+.emotion-6 {
   max-width: 55em;
   margin-left: auto;
   margin-right: auto;
 }
 
 @media (max-width:55em) {
-  .emotion-5 {
+  .emotion-6 {
     margin-left: 2em;
     margin-right: 2em;
   }
 }
 
 .emotion-1 {
+  --starstuff-card-default-background-color: 245,245,245;
+  --starstuff-card-default-shadow-color: 10,10,10;
+  border-radius: 10px;
+  margin: 1em;
+  background-color: rgba(var(--starstuff-card-default-background-color),0.5);
+  box-shadow: 0.5em 0.5em 0.75em rgba(var(--starstuff-card-default-shadow-color),0.3);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid;
+}
+
+@media screen and (prefers-color-scheme:dark) {
+  .emotion-1 {
+    --starstuff-card-default-background-color: 40,40,40;
+    --starstuff-card-default-shadow-color: 20,20,20;
+  }
 }
 
 @media screen and (min-width:512px) {
@@ -51,19 +63,20 @@ exports[`Posts Page Component renders as expected 1`] = `
   justify-content: center;
 }
 
-.emotion-0:not(:last-child) {
-  margin-bottom: 1.5rem;
-}
-
-.emotion-2 {
+.emotion-3 {
   height: 100%;
   min-width: 256px;
 }
 
 @media screen and (max-width:321px) {
-  .emotion-2 {
+  .emotion-3 {
     display: none;
   }
+}
+
+.emotion-2 {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 <main>
@@ -87,7 +100,7 @@ exports[`Posts Page Component renders as expected 1`] = `
   }
   </script>
   <div
-    className="emotion-5"
+    className="emotion-6"
   >
     <script
       type="application/ld+json"
@@ -112,7 +125,7 @@ exports[`Posts Page Component renders as expected 1`] = `
       Blog
     </h1>
     <div>
-      <article
+      <div
         className="emotion-1"
       >
         <script
@@ -138,15 +151,16 @@ exports[`Posts Page Component renders as expected 1`] = `
               Test Post (without Featured Image)
             </h2>
           </a>
-          <div>
-            <span>
-              Published 
-              Dec 24, 2019
-            </span>
-          </div>
+          <span>
+            Published 
+            Dec 24, 2019
+          </span>
+          <p>
+            This is a sample from a blog post, without a featured image.
+          </p>
         </div>
-      </article>
-      <article
+      </div>
+      <div
         className="emotion-1"
       >
         <script
@@ -170,7 +184,7 @@ exports[`Posts Page Component renders as expected 1`] = `
           href="/2019-12-24-test-post-with-featured-image"
         >
           <figure
-            className="emotion-2"
+            className="emotion-3"
           >
             <script
               type="application/ld+json"
@@ -185,7 +199,7 @@ exports[`Posts Page Component renders as expected 1`] = `
             }
             </script>
             <div
-              className=" gatsby-image-wrapper"
+              className="emotion-2 gatsby-image-wrapper"
               style={
                 Object {
                   "overflow": "hidden",
@@ -248,14 +262,15 @@ exports[`Posts Page Component renders as expected 1`] = `
               Test Post (with Featured Image)
             </h2>
           </a>
-          <div>
-            <span>
-              Published 
-              Dec 25, 2019
-            </span>
-          </div>
+          <span>
+            Published 
+            Dec 25, 2019
+          </span>
+          <p>
+            This is a sample from a blog post, with a featured image.
+          </p>
         </div>
-      </article>
+      </div>
     </div>
   </div>
 </main>

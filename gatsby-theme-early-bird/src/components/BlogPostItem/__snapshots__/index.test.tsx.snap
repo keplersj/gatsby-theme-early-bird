@@ -2,11 +2,23 @@
 
 exports[`Blog Post List Item renders correctly 1`] = `
 .emotion-1 {
+  --starstuff-card-default-background-color: 245,245,245;
+  --starstuff-card-default-shadow-color: 10,10,10;
+  border-radius: 10px;
+  margin: 1em;
+  background-color: rgba(var(--starstuff-card-default-background-color),0.5);
+  box-shadow: 0.5em 0.5em 0.75em rgba(var(--starstuff-card-default-shadow-color),0.3);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid;
+}
+
+@media screen and (prefers-color-scheme:dark) {
+  .emotion-1 {
+    --starstuff-card-default-background-color: 40,40,40;
+    --starstuff-card-default-shadow-color: 20,20,20;
+  }
 }
 
 @media screen and (min-width:512px) {
@@ -38,11 +50,7 @@ exports[`Blog Post List Item renders correctly 1`] = `
   justify-content: center;
 }
 
-.emotion-0:not(:last-child) {
-  margin-bottom: 1.5rem;
-}
-
-<article
+<div
   className="emotion-1"
 >
   <script
@@ -68,12 +76,13 @@ exports[`Blog Post List Item renders correctly 1`] = `
         Test Post
       </h2>
     </a>
-    <div>
-      <span>
-        Published 
-        December 18, 2018
-      </span>
-    </div>
+    <span>
+      Published 
+      December 18, 2018
+    </span>
+    <p>
+      This is a great test post.
+    </p>
   </div>
-</article>
+</div>
 `;

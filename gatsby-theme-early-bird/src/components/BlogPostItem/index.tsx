@@ -9,9 +9,8 @@ import styled from "@emotion/styled";
 const spanSeparatorCharacter = "⸱";
 const spanSeparator = ` ${spanSeparatorCharacter} `;
 
-const PostContainer = styled.article`
+const PostContainer = styled(Card)`
   display: flex;
-  border: 1px solid;
 
   @media screen and (min-width: 512px) {
     min-height: 192px;
@@ -31,7 +30,12 @@ const FeaturedImage = styled.figure`
   }
 `;
 
-const Info = styled(Card)`
+const StyledImage = styled(Image)`
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+`;
+
+const Info = styled.div`
   margin: 1rem;
   display: flex;
   flex-direction: column;
@@ -90,30 +94,21 @@ export const BlogPostItem = (props: Props): React.ReactElement<Props> => {
                 url: props.image.src
               }}
             />
-            <Image fluid={props.image} />
+            <StyledImage fluid={props.image} />
           </FeaturedImage>
         </Link>
       )}
-      <Info
-        title={props.title}
-        location={props.location}
-        customLinkComponent={(title, location): React.ReactElement => (
-          <Link to={location}>
-            <h2>{title}</h2>
-          </Link>
-        )}
-        supporting={
-          <>
-            <div>
-              <span>Published {props.publishDate}</span>
-              {/* <span>{spanSeparator}</span>
-          <span>{props.wordCount} words</span>
-          <span>{spanSeparator}</span>
-          <span>{props.minutesNeededToRead} minute read</span> */}
-            </div>
-          </>
-        }
-      />
+      <Info>
+        <Link to={props.location}>
+          <h2>{props.title}</h2>
+        </Link>
+        <span>Published {props.publishDate}</span>
+        {/* <span>{spanSeparator}</span>
+        <span>{props.wordCount} words</span>
+        <span>{spanSeparator}</span>
+        <span>{props.minutesNeededToRead} minute read</span> */}
+        <p>{props.description}</p>
+      </Info>
     </PostContainer>
   );
 };
