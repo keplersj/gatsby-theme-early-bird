@@ -69,7 +69,7 @@
     "starstuff-style": "^1.0.3",
     "styled-components": "^4.4.1",
     "tinacms": "^0.11.0",
-    "typescript": "^3.7.4",
+    "typescript": "^3.7.5",
     "uri-path-breakdown": "^1.0.0"
   },
   "peerDependencies": {
