@@ -99,6 +99,7 @@ exports[`Post Page renders as expected (with a featured image) 1`] = `
           }
         >
           <div
+            aria-hidden={true}
             style={
               Object {
                 "paddingBottom": "100%",

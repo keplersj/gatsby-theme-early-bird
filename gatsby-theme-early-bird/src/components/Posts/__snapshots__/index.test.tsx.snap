@@ -223,6 +223,7 @@ exports[`Posts Page Component renders as expected 1`] = `
               }
             >
               <div
+                aria-hidden={true}
                 style={
                   Object {
                     "paddingBottom": "100%",
