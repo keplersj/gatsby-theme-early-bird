@@ -34,6 +34,15 @@ module.exports = {
       displayName: "lint:stylelint",
       preset: "jest-runner-stylelint",
       testPathIgnorePatterns
+    },
+    {
+      displayName: "lint:eslint",
+      runner: "eslint",
+      testMatch: [
+        "<rootDir>/src/**/*.js",
+        "<rootDir>/src/**/*.ts",
+        "<rootDir>/src/**/*.tsx"
+      ]
     }
   ]
 };
