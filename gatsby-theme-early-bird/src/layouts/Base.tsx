@@ -15,7 +15,7 @@ interface Props {
 }
 
 const BaseLayout = (
-  props: React.PropsWithChildren<Props>
+  properties: React.PropsWithChildren<Props>
 ): React.ReactElement<React.PropsWithChildren<Props>> => {
   const data = useStaticQuery(graphql`
     query EarlyBirdBaseLayoutData {
@@ -35,35 +35,38 @@ const BaseLayout = (
         defaultTitle={data.site.siteMetadata.title}
       >
         <html lang="en" />
-        {props.title && <title>{props.title}</title>}
-        {props.description && (
-          <meta name="description" content={props.description} />
+        {properties.title && <title>{properties.title}</title>}
+        {properties.description && (
+          <meta name="description" content={properties.description} />
         )}
         <meta
           property="og:title"
           content={
-            (props.title &&
-              `${props.title} | ${data.site.siteMetadata.title}`) ||
+            (properties.title &&
+              `${properties.title} | ${data.site.siteMetadata.title}`) ||
             data.site.siteMetadata.title
           }
         />
-        {props.description && (
-          <meta property="og:description" content={props.description} />
+        {properties.description && (
+          <meta property="og:description" content={properties.description} />
         )}
       </Helmet>
 
-      {props.location && (
+      {properties.location && (
         <JsonLd<BreadcrumbList>
           item={{
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
-            itemListElement: breakdownURIPath(props.location.pathname).map(
+            itemListElement: breakdownURIPath(properties.location.pathname).map(
               (segment, index, baseArray): ListItem => {
                 const getName = (): string => {
                   if (segment === "/") {
                     return data.site.siteMetadata.title;
-                  } else if (index === baseArray.length - 1 && props.title) {
-                    return props.title;
+                  } else if (
+                    index === baseArray.length - 1 &&
+                    properties.title
+                  ) {
+                    return properties.title;
                   }
 
                   const [splitSegment] = segment
@@ -90,7 +93,7 @@ const BaseLayout = (
         />
       )}
 
-      {props.children}
+      {properties.children}
     </main>
   );
 };

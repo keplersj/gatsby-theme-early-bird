@@ -37,7 +37,7 @@ describe("Post Page Component", () => {
               featuredImage: {
                 childImageSharp: {
                   fluid: {
-                    aspectRatio: 1.0,
+                    aspectRatio: 1,
                     src: "/static/example_image_1_hash/1/example_image.jpeg",
                     srcSet:
                       "/static/example_image_1_hash/1/example_image.jpeg 1x",

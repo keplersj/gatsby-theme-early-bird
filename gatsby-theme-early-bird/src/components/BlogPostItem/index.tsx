@@ -58,7 +58,7 @@ interface Props {
   image?: FluidObject;
 }
 
-export const BlogPostItem = (props: Props): React.ReactElement<Props> => {
+export const BlogPostItem = (properties: Props): React.ReactElement<Props> => {
   const data = useStaticQuery(graphql`
     query EarlyBirdBlogPostItemQuery {
       site {
@@ -75,44 +75,44 @@ export const BlogPostItem = (props: Props): React.ReactElement<Props> => {
         item={{
           "@context": "https://schema.org",
           "@type": "BlogPosting",
-          "@id": `${data.site.siteMetadata.siteUrl}${props.location}`,
-          headline: props.title,
-          name: props.title,
-          datePublished: props.isoDate,
-          mainEntityOfPage: `${data.site.siteMetadata.siteUrl}${props.location}`,
-          image: props.image && {
+          "@id": `${data.site.siteMetadata.siteUrl}${properties.location}`,
+          headline: properties.title,
+          name: properties.title,
+          datePublished: properties.isoDate,
+          mainEntityOfPage: `${data.site.siteMetadata.siteUrl}${properties.location}`,
+          image: properties.image && {
             "@type": "ImageObject",
-            "@id": `${data.site.siteMetadata.siteUrl}${props.image.src}`
+            "@id": `${data.site.siteMetadata.siteUrl}${properties.image.src}`
           }
         }}
       />
-      {props.image && (
-        <Link to={props.location}>
+      {properties.image && (
+        <Link to={properties.location}>
           <FeaturedImage>
             <JsonLd<ImageObject>
               item={{
                 "@context": "https://schema.org",
                 "@type": "ImageObject",
-                "@id": `${data.site.siteMetadata.siteUrl}${props.image.src}`,
+                "@id": `${data.site.siteMetadata.siteUrl}${properties.image.src}`,
                 representativeOfPage: false,
-                contentUrl: props.image.src,
-                url: props.image.src
+                contentUrl: properties.image.src,
+                url: properties.image.src
               }}
             />
-            <StyledImage fluid={props.image} />
+            <StyledImage fluid={properties.image} />
           </FeaturedImage>
         </Link>
       )}
       <Info>
-        <Link to={props.location}>
-          <h2>{props.title}</h2>
+        <Link to={properties.location}>
+          <h2>{properties.title}</h2>
         </Link>
-        <span>Published {props.publishDate}</span>
+        <span>Published {properties.publishDate}</span>
         {/* <span>{spanSeparator}</span>
         <span>{props.wordCount} words</span>
         <span>{spanSeparator}</span>
         <span>{props.minutesNeededToRead} minute read</span> */}
-        <p>{props.description}</p>
+        <p>{properties.description}</p>
       </Info>
     </PostContainer>
   );

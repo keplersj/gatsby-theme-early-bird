@@ -41,8 +41,8 @@ interface Props extends PageRendererProps {
 }
 
 export const PostTemplate: React.FunctionComponent<Props> = remarkForm(
-  (props: Props): React.ReactElement<Props> => {
-    const post = props.data.blogPost;
+  (properties: Props): React.ReactElement<Props> => {
+    const post = properties.data.blogPost;
     const staticQuery = useStaticQuery(graphql`
       query EarlyBirdPostQuery {
         site {
@@ -58,21 +58,22 @@ export const PostTemplate: React.FunctionComponent<Props> = remarkForm(
         title={post.title}
         // description={getDescription(post.excerpt, post.description)}
         description={post.excerpt}
-        location={props.location}
+        location={properties.location}
       >
         <Helmet>
           <meta property="og:type" content="article" />
           <meta
             property="article:published_time"
-            content={props.data.blogPost.isoDate}
+            content={properties.data.blogPost.isoDate}
           />
 
-          {props.data.blogPost.featuredImage && (
+          {properties.data.blogPost.featuredImage && (
             <>
               <meta
                 property="og:image"
                 content={
-                  props.data.blogPost.featuredImage.childImageSharp.fluid.src
+                  properties.data.blogPost.featuredImage.childImageSharp.fluid
+                    .src
                 }
               />
               <meta property="og:image:width" content="7680" />
@@ -85,12 +86,12 @@ export const PostTemplate: React.FunctionComponent<Props> = remarkForm(
             item={{
               "@context": "https://schema.org",
               "@type": "BlogPosting",
-              "@id": `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
-              url: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
+              "@id": `${staticQuery.site.siteMetadata.siteUrl}${properties.location.pathname}`,
+              url: `${staticQuery.site.siteMetadata.siteUrl}${properties.location.pathname}`,
               headline: post.title,
               name: post.title,
               datePublished: post.isoDate,
-              mainEntityOfPage: `${staticQuery.site.siteMetadata.siteUrl}${props.location.pathname}`,
+              mainEntityOfPage: `${staticQuery.site.siteMetadata.siteUrl}${properties.location.pathname}`,
               image: post.featuredImage && {
                 "@type": "ImageObject",
                 "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`
