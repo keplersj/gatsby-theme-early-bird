@@ -27,5 +27,5 @@ export const CreatePostPlugin = new RemarkCreatorPlugin({
     title: form.title,
     date: form.date
   }),
-  body: (form: Form) => `This is a new blog post. Please write some content.`
+  body: () => `This is a new blog post. Please write some content.`
 });
