@@ -148,8 +148,8 @@ export const PostTemplate: React.FunctionComponent<Props> = remarkForm(
         label: "Featured Image",
         name: "frontmatter.featured_image",
         component: "image",
-        parse: filename => `../assets/${filename}`,
-        uploadDir: blogPost => "/content/assets/",
+        parse: (filename: any) => `../assets/${filename}`,
+        uploadDir: () => "/content/assets/",
         previewSrc: ({ frontmatter }) =>
           frontmatter.featured_image?.childImageSharp.fluid.src
       } as any,

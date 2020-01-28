@@ -6,9 +6,6 @@ import { JsonLd } from "react-schemaorg";
 import { FluidObject, default as Image } from "gatsby-image";
 import styled from "@emotion/styled";
 
-const spanSeparatorCharacter = "⸱";
-const spanSeparator = ` ${spanSeparatorCharacter} `;
-
 const PostContainer = styled(Card)`
   display: flex;
 
