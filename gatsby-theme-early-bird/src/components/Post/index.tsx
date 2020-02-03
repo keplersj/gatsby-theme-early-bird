@@ -33,6 +33,9 @@ interface Props extends PageRendererProps {
       date: string;
       featuredImage?: {
         childImageSharp: {
+          sqip: {
+            dataURI: string;
+          };
           fluid: FluidObject;
         };
       };
@@ -119,7 +122,12 @@ export const PostTemplate: React.FunctionComponent<Props> = remarkForm(
                     url: post.featuredImage.childImageSharp.fluid.src
                   }}
                 />
-                <Image fluid={post.featuredImage.childImageSharp.fluid} />
+                <Image
+                  fluid={{
+                    ...post.featuredImage.childImageSharp.fluid,
+                    base64: post.featuredImage.childImageSharp.sqip.dataURI
+                  }}
+                />
               </figure>
             )}
           </header>
@@ -176,6 +184,9 @@ export const fragment = graphql`
     date(formatString: "MMMM DD, YYYY")
     featuredImage {
       childImageSharp {
+        sqip(numberOfPrimitives: 100, blur: 0) {
+          dataURI
+        }
         # Generate Picture up to 8K 16:9 ratio, crop and cover as appropriate
         fluid(
           maxWidth: 7680
@@ -199,7 +210,7 @@ export const fragment = graphql`
             7680
           ]
         ) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }

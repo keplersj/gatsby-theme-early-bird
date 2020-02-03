@@ -36,6 +36,9 @@ describe("Post Page", () => {
               date: "Dec 24, 2019",
               featuredImage: {
                 childImageSharp: {
+                  sqip: {
+                    dataURI: "data:image/svg+xml"
+                  },
                   fluid: {
                     aspectRatio: 1,
                     src: "/static/example_image_1_hash/1/example_image.jpeg",

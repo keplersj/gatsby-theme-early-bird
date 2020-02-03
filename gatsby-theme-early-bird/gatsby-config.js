@@ -51,6 +51,7 @@ module.exports = themeOptions => {
           name: options.assetPath || `content/assets`
         }
       },
+      "gatsby-transformer-sqip",
       `gatsby-transformer-sharp`,
       `gatsby-plugin-sharp`,
       "gatsby-plugin-react-helmet-async",

@@ -231,6 +231,24 @@ exports[`Posts Page Component renders as expected 1`] = `
                   }
                 }
               />
+              <img
+                alt=""
+                aria-hidden={true}
+                src="data:image/svg+xml"
+                style={
+                  Object {
+                    "height": "100%",
+                    "left": 0,
+                    "objectFit": "cover",
+                    "objectPosition": "center",
+                    "opacity": 1,
+                    "position": "absolute",
+                    "top": 0,
+                    "transitionDelay": "500ms",
+                    "width": "100%",
+                  }
+                }
+              />
               <picture>
                 <source
                   sizes="(min-width 512px)"
