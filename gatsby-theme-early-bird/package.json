@@ -46,7 +46,7 @@
     "stylelint-config-starstuff": "^1.1.4"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.27",
+    "@emotion/core": "^10.0.28",
     "@mdx-js/mdx": "^1.5.7",
     "@mdx-js/react": "^1.5.7",
     "@types/react": "^16.9.23",
