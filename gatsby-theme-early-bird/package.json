@@ -69,7 +69,7 @@
     "gatsby-transformer-sqip": "^2.1.73",
     "modern-normalize": "^0.6.0",
     "react-helmet-async": "^1.0.4",
-    "react-schemaorg": "^1.0.0",
+    "react-schemaorg": "^1.0.1",
     "schema-dts": "^0.5.1",
     "slugify": "^1.4.0",
     "starstuff-components": "^2.1.2",
