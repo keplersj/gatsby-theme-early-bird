@@ -4,7 +4,7 @@ const REPO_ABSOLUTE_PATH = path.join(process.cwd(), "..");
 module.exports = {
   siteMetadata: {
     title: "Example Early Bird Site",
-    siteUrl: "http://example.dev/"
+    siteUrl: "http://example.dev/",
   },
   plugins: [
     {
@@ -15,12 +15,12 @@ module.exports = {
             resolve: "gatsby-tinacms-git",
             options: {
               pathToRepo: REPO_ABSOLUTE_PATH,
-              pathToContent: "example"
-            }
-          }
-        ]
-      }
+              pathToContent: "example",
+            },
+          },
+        ],
+      },
     },
-    "gatsby-theme-early-bird"
-  ]
+    "gatsby-theme-early-bird",
+  ],
 };

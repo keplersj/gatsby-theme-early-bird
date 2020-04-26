@@ -1,6 +1,6 @@
 ---
 title: Test Post (with Featured Image)
-date: '2019-12-18T00:00:00.000Z'
+date: "2019-12-18T00:00:00.000Z"
 featured_image: ../assets/IMG_20190226_213537-01.jpeg
 ---
 

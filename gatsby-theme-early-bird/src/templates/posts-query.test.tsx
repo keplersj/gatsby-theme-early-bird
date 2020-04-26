@@ -11,9 +11,9 @@ describe("Posts Page", () => {
       site: {
         siteMetadata: {
           title: "Test Site",
-          siteUrl: "http://example.dev"
-        }
-      }
+          siteUrl: "http://example.dev",
+        },
+      },
     }));
   });
 
@@ -33,8 +33,8 @@ describe("Posts Page", () => {
                     slug: "/2019-12-24-test-post-without-featured-image",
                     title: "Test Post (without Featured Image)",
                     isoDate: "2019-12-24",
-                    date: "Dec 24, 2019"
-                  }
+                    date: "Dec 24, 2019",
+                  },
                 },
                 {
                   node: {
@@ -48,7 +48,7 @@ describe("Posts Page", () => {
                     featuredImage: {
                       childImageSharp: {
                         sqip: {
-                          dataURI: "data:image/svg+xml"
+                          dataURI: "data:image/svg+xml",
                         },
                         fluid: {
                           aspectRatio: 1,
@@ -56,14 +56,14 @@ describe("Posts Page", () => {
                             "/static/sample_image_1_hash/1/sample_image_1.jpeg",
                           srcSet:
                             "/static/sample_image_1_hash/1/sample_image_1.jpeg 1x",
-                          sizes: "(min-width 512px)"
-                        }
-                      }
-                    }
-                  }
-                }
-              ]
-            }
+                          sizes: "(min-width 512px)",
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+            },
           }}
           location={{ pathname: "/" } as WindowLocation}
         />

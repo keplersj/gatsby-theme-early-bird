@@ -19,13 +19,18 @@ export const CreatePostPlugin = new RemarkCreatorPlugin({
       name: "title",
       label: "Title",
       component: "text",
-      defaultValue: "New Blog Post"
+      defaultValue: "New Blog Post",
     },
-    { name: "date", label: "Date", component: "date", defaultValue: new Date() }
+    {
+      name: "date",
+      label: "Date",
+      component: "date",
+      defaultValue: new Date(),
+    },
   ],
   frontmatter: (form: Form) => ({
     title: form.title,
-    date: form.date
+    date: form.date,
   }),
-  body: () => `This is a new blog post. Please write some content.`
+  body: () => `This is a new blog post. Please write some content.`,
 });

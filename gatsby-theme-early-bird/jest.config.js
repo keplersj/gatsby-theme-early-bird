@@ -4,7 +4,7 @@ const testPathIgnorePatterns = [
   "/node_modules/",
   "/public/",
   "/reports/",
-  "/static/"
+  "/static/",
 ];
 
 module.exports = {
@@ -17,23 +17,23 @@ module.exports = {
       snapshotSerializers: [
         "jest-emotion",
         "jest-serializer-react-helmet-async",
-        "jest-serializer-json-ld-script"
+        "jest-serializer-json-ld-script",
       ],
       moduleNameMapper: {
         "modern-normalize": "jest-transform-stub",
-        "starstuff-style": "jest-transform-stub"
+        "starstuff-style": "jest-transform-stub",
       },
-      testPathIgnorePatterns
+      testPathIgnorePatterns,
     },
     {
       displayName: "lint:prettier",
       preset: "jest-runner-prettier",
-      testPathIgnorePatterns
+      testPathIgnorePatterns,
     },
     {
       displayName: "lint:stylelint",
       preset: "jest-runner-stylelint",
-      testPathIgnorePatterns
+      testPathIgnorePatterns,
     },
     {
       displayName: "lint:eslint",
@@ -41,8 +41,8 @@ module.exports = {
       testMatch: [
         "<rootDir>/src/**/*.js",
         "<rootDir>/src/**/*.ts",
-        "<rootDir>/src/**/*.tsx"
-      ]
-    }
-  ]
+        "<rootDir>/src/**/*.tsx",
+      ],
+    },
+  ],
 };

@@ -16,10 +16,10 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
 
   const dirs = [
     path.join(program.directory, contentPath),
-    path.join(program.directory, assetPath)
+    path.join(program.directory, assetPath),
   ];
 
-  dirs.forEach(dir => {
+  dirs.forEach((dir) => {
     debug(`Initializing ${dir} directory`);
     if (!fs.existsSync(dir)) {
       mkdirp.sync(dir);
@@ -27,7 +27,7 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
   });
 };
 
-const remarkResolverPassthrough = fieldName => async (
+const remarkResolverPassthrough = (fieldName) => async (
   source,
   args,
   context,
@@ -35,12 +35,12 @@ const remarkResolverPassthrough = fieldName => async (
 ) => {
   const type = info.schema.getType("MarkdownRemark");
   const remarkNode = context.nodeModel.getNodeById({
-    id: source.parent
+    id: source.parent,
   });
   if (type.getFields()[fieldName].extensions.needsResolve) {
     const resolver = type.getFields()[fieldName].resolve;
     const result = await resolver(remarkNode, args, context, {
-      fieldName
+      fieldName,
     });
     return result;
   } else {
@@ -71,10 +71,10 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       fields: {
         id: { type: "ID!" },
         title: {
-          type: "String!"
+          type: "String!",
         },
         slug: {
-          type: "String!"
+          type: "String!",
         },
         date: { type: "Date!", extensions: { dateformat: {} } },
         tags: { type: "[String]!" },
@@ -84,34 +84,34 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
           args: {
             pruneLength: {
               type: "Int",
-              defaultValue: 140
-            }
+              defaultValue: 140,
+            },
           },
-          resolve: remarkResolverPassthrough("excerpt")
+          resolve: remarkResolverPassthrough("excerpt"),
         },
         html: {
           type: "String!",
-          resolve: remarkResolverPassthrough("html")
+          resolve: remarkResolverPassthrough("html"),
         },
         featuredImage: { type: "File", extensions: { fileByRelativePath: {} } },
         fileRelativePath: {
           type: "String!",
-          resolve: remarkResolverPassthrough("fileRelativePath")
+          resolve: remarkResolverPassthrough("fileRelativePath"),
         },
         rawFrontmatter: {
           type: "String!",
-          resolve: remarkResolverPassthrough("rawFrontmatter")
+          resolve: remarkResolverPassthrough("rawFrontmatter"),
         },
         rawMarkdownBody: {
           type: "String!",
-          resolve: remarkResolverPassthrough("rawMarkdownBody")
+          resolve: remarkResolverPassthrough("rawMarkdownBody"),
         },
         frontmatter: {
           type: "MarkdownRemarkFrontmatter",
-          resolve: remarkResolverPassthrough("frontmatter")
-        }
+          resolve: remarkResolverPassthrough("frontmatter"),
+        },
       },
-      interfaces: ["Node", "BlogPost"]
+      interfaces: ["Node", "BlogPost"],
     })
   );
 };
@@ -148,7 +148,7 @@ exports.onCreateNode = async (
       const filePath = createFilePath({
         node: fileNode,
         getNode,
-        basePath: contentPath
+        basePath: contentPath,
       });
 
       slug = urlResolve(basePath, filePath);
@@ -162,7 +162,7 @@ exports.onCreateNode = async (
       slug,
       date: node.frontmatter.date,
       keywords: node.frontmatter.keywords || [],
-      featuredImage: node.frontmatter.featured_image
+      featuredImage: node.frontmatter.featured_image,
     };
 
     const remarkBlogPostId = createNodeId(`${node.id} >>> RemarkBlogPost`);
@@ -179,8 +179,8 @@ exports.onCreateNode = async (
           .update(JSON.stringify(fieldData))
           .digest("hex"),
         content: JSON.stringify(fieldData),
-        description: "Remark implementation of the BlogPost interface"
-      }
+        description: "Remark implementation of the BlogPost interface",
+      },
     });
     createParentChildLink({ parent: node, child: getNode(remarkBlogPostId) });
   }
@@ -222,8 +222,8 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
       path: slug,
       component: PostTemplate,
       context: {
-        id: post.id
-      }
+        id: post.id,
+      },
     });
   });
 
@@ -231,6 +231,6 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   createPage({
     path: basePath,
     component: PostsTemplate,
-    context: {}
+    context: {},
   });
 };

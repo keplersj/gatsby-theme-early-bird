@@ -97,8 +97,8 @@ export const PostTemplate: React.FunctionComponent<Props> = remarkForm(
               mainEntityOfPage: `${staticQuery.site.siteMetadata.siteUrl}${properties.location.pathname}`,
               image: post.featuredImage && {
                 "@type": "ImageObject",
-                "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`
-              }
+                "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`,
+              },
             }}
           />
           <header>
@@ -119,13 +119,13 @@ export const PostTemplate: React.FunctionComponent<Props> = remarkForm(
                     "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.featuredImage.childImageSharp.fluid.src}`,
                     representativeOfPage: true,
                     contentUrl: post.featuredImage.childImageSharp.fluid.src,
-                    url: post.featuredImage.childImageSharp.fluid.src
+                    url: post.featuredImage.childImageSharp.fluid.src,
                   }}
                 />
                 <Image
                   fluid={{
                     ...post.featuredImage.childImageSharp.fluid,
-                    base64: post.featuredImage.childImageSharp.sqip.dataURI
+                    base64: post.featuredImage.childImageSharp.sqip.dataURI,
                   }}
                 />
               </figure>
@@ -145,12 +145,12 @@ export const PostTemplate: React.FunctionComponent<Props> = remarkForm(
         label: "Title",
         name: "frontmatter.title",
         description: "Enter the title of the post here",
-        component: "text"
+        component: "text",
       },
       {
         label: "Date Published",
         name: "frontmatter.date",
-        component: "date"
+        component: "date",
       },
       {
         label: "Featured Image",
@@ -159,15 +159,15 @@ export const PostTemplate: React.FunctionComponent<Props> = remarkForm(
         parse: (filename: any) => `../assets/${filename}`,
         uploadDir: () => "/content/assets/",
         previewSrc: ({ frontmatter }) =>
-          frontmatter.featured_image?.childImageSharp.fluid.src
+          frontmatter.featured_image?.childImageSharp.fluid.src,
       } as any,
       {
         name: "rawMarkdownBody",
         component: "markdown",
         label: "Post Body",
-        description: "Edit the body of the post here"
-      }
-    ]
+        description: "Edit the body of the post here",
+      },
+    ],
   }
 );
 

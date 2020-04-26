@@ -69,9 +69,9 @@ export const Posts = ({ data, location }: Props): React.ReactElement<Props> => {
             blogPost: data.allBlogPost.edges.map(
               ({ node: post }): BlogPosting => ({
                 "@type": "BlogPosting",
-                "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`
+                "@id": `${staticQuery.site.siteMetadata.siteUrl}${post.slug}`,
               })
-            )
+            ),
           }}
         />
         <h1>Blog</h1>
@@ -93,7 +93,7 @@ export const Posts = ({ data, location }: Props): React.ReactElement<Props> => {
                 image={
                   post.featuredImage && {
                     ...post.featuredImage.childImageSharp.fluid,
-                    base64: post.featuredImage.childImageSharp.sqip.dataURI
+                    base64: post.featuredImage.childImageSharp.sqip.dataURI,
                   }
                 }
               />

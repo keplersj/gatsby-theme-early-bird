@@ -8,9 +8,9 @@ describe("Blog Post List Item", (): void => {
     (useStaticQuery as jest.Mock).mockImplementationOnce((): object => ({
       site: {
         siteMetadata: {
-          siteUrl: "http://example.dev"
-        }
-      }
+          siteUrl: "http://example.dev",
+        },
+      },
     }));
   });
 

@@ -9,9 +9,9 @@ beforeEach((): void => {
     site: {
       siteMetadata: {
         title: "Test Site",
-        siteUrl: "https://example.dev"
-      }
-    }
+        siteUrl: "https://example.dev",
+      },
+    },
   }));
 });
 
@@ -40,7 +40,7 @@ describe("Base Layout", (): void => {
             title="Test Post"
             location={
               {
-                pathname: "/2016-11-9-test-post"
+                pathname: "/2016-11-9-test-post",
               } as any
             }
           >

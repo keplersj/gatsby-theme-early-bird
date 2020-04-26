@@ -79,8 +79,8 @@ export const BlogPostItem = (properties: Props): React.ReactElement<Props> => {
           mainEntityOfPage: `${data.site.siteMetadata.siteUrl}${properties.location}`,
           image: properties.image && {
             "@type": "ImageObject",
-            "@id": `${data.site.siteMetadata.siteUrl}${properties.image.src}`
-          }
+            "@id": `${data.site.siteMetadata.siteUrl}${properties.image.src}`,
+          },
         }}
       />
       {properties.image && (
@@ -93,7 +93,7 @@ export const BlogPostItem = (properties: Props): React.ReactElement<Props> => {
                 "@id": `${data.site.siteMetadata.siteUrl}${properties.image.src}`,
                 representativeOfPage: false,
                 contentUrl: properties.image.src,
-                url: properties.image.src
+                url: properties.image.src,
               }}
             />
             <StyledImage fluid={properties.image} />
