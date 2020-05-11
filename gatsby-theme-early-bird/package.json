@@ -75,7 +75,7 @@
     "starstuff-components": "^2.1.11",
     "starstuff-style": "^1.1.2",
     "styled-components": "^5.1.0",
-    "tinacms": "^0.19.0",
+    "tinacms": "^0.19.2",
     "typescript": "^3.8.3",
     "uri-path-breakdown": "^1.0.0"
   },
