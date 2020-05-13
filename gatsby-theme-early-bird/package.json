@@ -59,7 +59,7 @@
     "gatsby-plugin-tinacms": "^0.1.37",
     "gatsby-plugin-typescript": "^2.4.1",
     "gatsby-remark-copy-linked-files": "^2.3.2",
-    "gatsby-remark-images": "^3.3.2",
+    "gatsby-remark-images": "^3.3.3",
     "gatsby-remark-smartypants": "^2.3.1",
     "gatsby-source-filesystem": "^2.3.1",
     "gatsby-tinacms-git": "^0.4.11",
