@@ -61,7 +61,7 @@
     "gatsby-remark-copy-linked-files": "^2.3.2",
     "gatsby-remark-images": "^3.3.4",
     "gatsby-remark-smartypants": "^2.3.1",
-    "gatsby-source-filesystem": "^2.3.4",
+    "gatsby-source-filesystem": "^2.3.5",
     "gatsby-tinacms-git": "^0.4.11",
     "gatsby-tinacms-remark": "^0.7.18",
     "gatsby-transformer-remark": "^2.8.9",
