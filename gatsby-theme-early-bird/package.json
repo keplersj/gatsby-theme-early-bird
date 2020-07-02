@@ -65,7 +65,7 @@
     "gatsby-tinacms-git": "^0.5.6",
     "gatsby-tinacms-remark": "^0.8.5",
     "gatsby-transformer-remark": "^2.8.22",
-    "gatsby-transformer-sharp": "^2.5.9",
+    "gatsby-transformer-sharp": "^2.5.10",
     "gatsby-transformer-sqip": "^2.3.16",
     "modern-normalize": "^0.6.0",
     "react-helmet-async": "^1.0.6",
