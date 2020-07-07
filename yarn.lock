@@ -17493,10 +17493,10 @@ stackframe@^1.1.1:
   resolved "https://registry.yarnpkg.com/stackframe/-/stackframe-1.1.1.tgz#ffef0a3318b1b60c3b58564989aca5660729ec71"
   integrity sha512-0PlYhdKh6AfFxRyK/v+6/k+/mMfyiEBbTM5L94D0ZytQnJ166wuwoTYLHFWGbs2dpA8Rgq763KGWmN1EQEYHRQ==
 
-starstuff-components@^2.1.15:
-  version "2.1.15"
-  resolved "https://registry.yarnpkg.com/starstuff-components/-/starstuff-components-2.1.15.tgz#ac27beaab486e8ea901ec75bf6fdc54cb97c51ff"
-  integrity sha512-4r7V9WEdIhCLo1XqhlR1oDJitPf85ZOJwOKoxks7DGaRfwyYVx6bNLkgetd59miWGQ9Wf0kaLvsmqLN449hGog==
+starstuff-components@^2.1.16:
+  version "2.1.16"
+  resolved "https://registry.yarnpkg.com/starstuff-components/-/starstuff-components-2.1.16.tgz#38ddcca25ea0807903ce4be2d7a91bd0c73c2403"
+  integrity sha512-wUo1DMrqbWBz8PvxaEK1xslR8g+N8NuzwJQ9Gk7g+9yuFkKiciXw5ir58cqJhZAIFExaWTFEdoigYzleDTWk/w==
   dependencies:
     "@emotion/styled" "^10.0.27"
     polished "^3.5.2"
@@ -18425,7 +18425,7 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tinacms@^0.22.0, tinacms@^0.22.1:
+tinacms@^0.22.1:
   version "0.22.1"
   resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.22.1.tgz#98046d47d7acbf39e6c019241c4754e1c86c9ebc"
   integrity sha512-KauHOLVXaC/UxewhaQ74j3QangGAv3Rkkq+jaYK77yO/Ng64dArSTzO8ggN4wv5zUFsoMJ17/H9IVwnyGzXCmA==
