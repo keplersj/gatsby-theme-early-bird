@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
-    "@mdx-js/mdx": "^1.6.10",
+    "@mdx-js/mdx": "^1.6.11",
     "@mdx-js/react": "^1.6.10",
     "@types/react": "^16.9.43",
     "@types/react-helmet": "^6.0.0",
