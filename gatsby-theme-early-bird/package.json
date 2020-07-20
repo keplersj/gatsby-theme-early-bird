@@ -48,7 +48,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@mdx-js/mdx": "^1.6.11",
-    "@mdx-js/react": "^1.6.11",
+    "@mdx-js/react": "^1.6.13",
     "@types/react": "^16.9.43",
     "@types/react-helmet": "^6.0.0",
     "gatsby-image": "^2.4.2",
