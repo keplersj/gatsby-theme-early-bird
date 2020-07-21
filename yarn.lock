@@ -8088,7 +8088,7 @@ gatsby-cli@^2.12.52:
     yargs "^15.3.1"
     yurnalist "^1.1.2"
 
-gatsby-core-utils@^1.3.10, gatsby-core-utils@^1.3.11, gatsby-core-utils@^1.3.12, gatsby-core-utils@^1.3.13, gatsby-core-utils@^1.3.8:
+gatsby-core-utils@^1.3.10, gatsby-core-utils@^1.3.11, gatsby-core-utils@^1.3.13, gatsby-core-utils@^1.3.8:
   version "1.3.13"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.3.13.tgz#ced293b65eecbe61c3d2d0f34bd1fcba37a49d55"
   integrity sha512-2I8stv39t89fEbZ08VP5TsmlmB+0Jog4OH6ebf4+yaKxPjQCOEtui8TzMqJteqrIUhqV4gMzCgG4cZlRmbRqgQ==
@@ -8176,7 +8176,7 @@ gatsby-plugin-react-helmet-async@^1.0.16:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet-async/-/gatsby-plugin-react-helmet-async-1.0.16.tgz#dd2804d1fad56f6d4d10d47e4318cfb6f8c77563"
   integrity sha512-kLMoY/Bh9t4hIfGepXAms7fuByhLQehy/TTFT0qyLQGcY77y7thMIdM3V6wIVwGC7bbXHSgFcYlVTlarXTkKMw==
 
-gatsby-plugin-sharp@^2.6.20, gatsby-plugin-sharp@^2.6.21:
+gatsby-plugin-sharp@^2.6.21:
   version "2.6.21"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.6.21.tgz#872eb076f6862e773fbde529fa6b821a97745ae5"
   integrity sha512-KKVdMAysqZe8oPyPyGDC6tyfAKxqK0tDBk2PVp+Y76TjFMniFxCYJ/4LDPGLfQ+r1wkXX6ndK1lO2osTuzHSRA==
@@ -8441,15 +8441,15 @@ gatsby-transformer-sharp@^2.5.11:
     semver "^5.7.1"
     sharp "^0.25.1"
 
-gatsby-transformer-sqip@^2.3.20:
-  version "2.3.20"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-sqip/-/gatsby-transformer-sqip-2.3.20.tgz#6f8c4b6d0b56806addbf5d973bb6e087d1ab2fb4"
-  integrity sha512-YYfJcebuvi6mpsT2b1+ge3d23I3OBz2Iv3V2PWQJ/j1lUfG9TseUbgtKdv32Ozr6PyQUeXZsJlHNBdII7hHwbg==
+gatsby-transformer-sqip@^2.3.21:
+  version "2.3.21"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sqip/-/gatsby-transformer-sqip-2.3.21.tgz#aee208235fbb542c53f7b60bb674fb9acfbd22b2"
+  integrity sha512-KdodFLM0AeL8KkciGyEua4Ttb5upwTeXDnAdLIJ0eJaxJwPgORrs+0sHrWv7iVPddNcDc9Zrr/KD5c29g9VzBw==
   dependencies:
     "@babel/runtime" "^7.10.3"
     bluebird "^3.7.2"
     fs-extra "^8.1.0"
-    gatsby-plugin-sharp "^2.6.20"
+    gatsby-plugin-sharp "^2.6.21"
     md5-file "^4.0.0"
     mini-svg-data-uri "^1.2.3"
     p-queue "^2.4.2"
