@@ -8088,7 +8088,7 @@ gatsby-cli@^2.12.52:
     yargs "^15.3.1"
     yurnalist "^1.1.2"
 
-gatsby-core-utils@^1.3.10, gatsby-core-utils@^1.3.11, gatsby-core-utils@^1.3.13, gatsby-core-utils@^1.3.14, gatsby-core-utils@^1.3.8:
+gatsby-core-utils@^1.3.10, gatsby-core-utils@^1.3.11, gatsby-core-utils@^1.3.14, gatsby-core-utils@^1.3.8:
   version "1.3.14"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.3.14.tgz#a830412a9edb87544bc0d1ad9c2556d33aa0d157"
   integrity sha512-jfC+x5rrYUfl70MHRLsOtsXqdlqIbQGVDKXrvp6IPIUP8TKU6XIpYktF0Yd4ldJIWmGZTa062RWUOd2DFBHVSw==
@@ -11054,10 +11054,10 @@ jest-pnp-resolver@^1.2.1:
   resolved "https://registry.yarnpkg.com/jest-pnp-resolver/-/jest-pnp-resolver-1.2.1.tgz#ecdae604c077a7fbc70defb6d517c3c1c898923a"
   integrity sha512-pgFw2tm54fzgYvc/OHrnysABEObZCUNFnhjoRjaVOCN8NYc032/gVjPaHD4Aq6ApkSieWtfKAFQtmDKAmhupnQ==
 
-jest-preset-gatsby@^1.0.70:
-  version "1.0.70"
-  resolved "https://registry.yarnpkg.com/jest-preset-gatsby/-/jest-preset-gatsby-1.0.70.tgz#27b8f06406fcd19094f2856393e82875caef1ee8"
-  integrity sha512-Ci0F0tF3oU3j0PcvCZtmlk8VqOvYIwPES5oirefsK6r9cQk8pTjq95Gms5JH8iUtPfJmgqHArOZ1V5ZeO4b76w==
+jest-preset-gatsby@^1.0.71:
+  version "1.0.71"
+  resolved "https://registry.yarnpkg.com/jest-preset-gatsby/-/jest-preset-gatsby-1.0.71.tgz#8bb989e7ee17123cc9c2b6c3625a464de80bd583"
+  integrity sha512-PtmRpPyVUfRrB9zCTvtAETUPZwqeZbPMQ6k1VfmRFNl8qb8rnOS1nmJXI1f+5WrzBRFGA3K+vs+ucL5GuMEUoA==
   dependencies:
     "@babel/preset-typescript" "^7.9.0"
     babel-jest "^26.0.0"
