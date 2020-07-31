@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/keplersj/gatsby-theme-early-bird#readme",
   "devDependencies": {
-    "@types/jest": "^26.0.7",
+    "@types/jest": "^26.0.8",
     "@types/react-test-renderer": "^16.9.2",
     "eslint": "^7.5.0",
     "eslint-config-starstuff": "^1.4.42",
