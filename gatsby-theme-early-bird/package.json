@@ -24,7 +24,7 @@
   "homepage": "https://github.com/keplersj/gatsby-theme-early-bird#readme",
   "devDependencies": {
     "@types/jest": "^26.0.8",
-    "@types/react-test-renderer": "^16.9.2",
+    "@types/react-test-renderer": "^16.9.3",
     "eslint": "^7.6.0",
     "eslint-config-starstuff": "^1.4.42",
     "gatsby": "^2.23.12",
