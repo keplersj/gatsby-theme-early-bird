@@ -68,7 +68,7 @@
     "gatsby-transformer-sharp": "^2.5.14",
     "gatsby-transformer-sqip": "^2.3.35",
     "modern-normalize": "^1.0.0",
-    "react-helmet-async": "^1.0.6",
+    "react-helmet-async": "^1.0.7",
     "react-schemaorg": "^1.2.0",
     "schema-dts": "^0.7.1",
     "slugify": "^1.4.5",
