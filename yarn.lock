@@ -1105,7 +1105,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2", "@babel/runtime@^7.9.6":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2", "@babel/runtime@^7.9.6":
   version "7.11.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
   integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
@@ -15081,12 +15081,12 @@ pnp-webpack-plugin@^1.6.4:
   dependencies:
     ts-pnp "^1.1.6"
 
-polished@^3.5.2:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/polished/-/polished-3.5.2.tgz#ca132b8cd68f7ffa95ae9d423f03e7a14fda1062"
-  integrity sha512-vWoRDg3gY5RQBtUfcj9MRN10VCIf4EkdUikGxyXItg2Hnwk+eIVtdBiLajN0ldFeT3Vq4r/QNbjrQdhqBKrTug==
+polished@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-4.0.1.tgz#7aa7075bd3e4745e4ac59f0279e91100a20c4bcb"
+  integrity sha512-wsACmaPErslm30ZafPK6meKVh33h969O945jnP1nDw3xmfJTCPu9VHVfYVoH1kuE97dmTSDkXmCI/NsxN+U6Gg==
   dependencies:
-    "@babel/runtime" "^7.8.7"
+    "@babel/runtime" "^7.9.2"
 
 portfinder@^1.0.26:
   version "1.0.26"
@@ -18239,13 +18239,13 @@ stackframe@^1.1.1:
   resolved "https://registry.yarnpkg.com/stackframe/-/stackframe-1.1.1.tgz#ffef0a3318b1b60c3b58564989aca5660729ec71"
   integrity sha512-0PlYhdKh6AfFxRyK/v+6/k+/mMfyiEBbTM5L94D0ZytQnJ166wuwoTYLHFWGbs2dpA8Rgq763KGWmN1EQEYHRQ==
 
-starstuff-components@^2.1.22:
-  version "2.1.22"
-  resolved "https://registry.yarnpkg.com/starstuff-components/-/starstuff-components-2.1.22.tgz#4cf59782465bbfd355bc88e515cbe404965a3f34"
-  integrity sha512-lGWVoJTZ612Ji8Q/qIeT5eYJuuLesTIg0W3JeoQ+N1zFtf0E+DGC+aCMb/j3v/S84xYnhNHIOwCoFCmA7le8og==
+starstuff-components@^2.1.23:
+  version "2.1.23"
+  resolved "https://registry.yarnpkg.com/starstuff-components/-/starstuff-components-2.1.23.tgz#64bcb587205ee6db726b02d32d869ab8a4435272"
+  integrity sha512-jRXC4zl0wLTyegBamyuAgbiOyhUQ/4H54SyFEloW8AuJP81I3tkH/2nQbTu0n7BhxYJg7Rjpgb0+FRYNlnMPLQ==
   dependencies:
     "@emotion/styled" "^10.0.27"
-    polished "^3.5.2"
+    polished "^4.0.1"
 
 starstuff-style@^1.1.5:
   version "1.1.5"
