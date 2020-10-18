@@ -20296,10 +20296,10 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-uri-path-breakdown@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/uri-path-breakdown/-/uri-path-breakdown-1.0.6.tgz#d1e3c8c656edf236cd19d6e5a2144056300ae3ee"
-  integrity sha512-hDBIRCgTR2nHkV2a8fqlJ9WzkmQ6w5amjfDcL7GcetJNW292qBDRkDG6beDhNVU3qzycIGrZ0Cf6DGv4P3J74g==
+uri-path-breakdown@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/uri-path-breakdown/-/uri-path-breakdown-1.0.7.tgz#194c21188210a882f23774a49f50ac7b15200710"
+  integrity sha512-ZM2bvQygz65eFxcldekUIKcbURpEZVyMPXBbSC7Cfr8xOBoJRftaGx4aGyf7xJVYLVBfGwCnhpTvipPpHDUBXQ==
   dependencies:
     uri-js "^4.2.2"
 
