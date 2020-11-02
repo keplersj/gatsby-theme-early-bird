@@ -8379,7 +8379,7 @@ gatsby-plugin-react-helmet-async@^1.1.0:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet-async/-/gatsby-plugin-react-helmet-async-1.1.0.tgz#680995b67588a4d4de1f63e41bd929e1f7fe1c86"
   integrity sha512-qJkFIcDKg9b27Z3tXp5uXugVzne2MEsTi4hIm5erTSlGmOIj2EuoKfC8Tc/bGUkHazbY71AUFAZj15aonAXPzw==
 
-gatsby-plugin-sharp@^2.6.44, gatsby-plugin-sharp@^2.7.0:
+gatsby-plugin-sharp@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.7.0.tgz#5bf1c27f30481c61e01923eec28c6c2b2496161d"
   integrity sha512-l53FeWKDRE3LpNFUsTVBv18FT+u/1gOdBhdhgM2pU4oj/e0gWxTAJ8IoDVQuoYAM/viZfnRnTsU9YEieCzqzjQ==
@@ -8644,14 +8644,14 @@ gatsby-transformer-sharp@^2.5.21:
     semver "^7.3.2"
     sharp "^0.25.4"
 
-gatsby-transformer-sqip@^2.3.45:
-  version "2.3.45"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-sqip/-/gatsby-transformer-sqip-2.3.45.tgz#1338f4d3a69bfbc7d6ab12c781cfbf3f8c2814ae"
-  integrity sha512-2I5ztOgkvho82BoHDGCApfn3+M9kihcb3+GSSF17cJYLmR3kjq05CCIj3MRciU5EKH+sk3C8v4di6W6XPkYbxg==
+gatsby-transformer-sqip@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sqip/-/gatsby-transformer-sqip-2.4.0.tgz#eb331f74482bf57b15f936cd6e116ad3c7614875"
+  integrity sha512-W5rfRC3yTjx1eS3mFiv9MnSCn19+DFfBHW2CI6RyOMNoOi9qMXIIAtfDWDD7S5XpYJwUnsPxtM9C9EQUfFnTLQ==
   dependencies:
     "@babel/runtime" "^7.11.2"
     fs-extra "^8.1.0"
-    gatsby-plugin-sharp "^2.6.44"
+    gatsby-plugin-sharp "^2.7.0"
     md5-file "^5.0.0"
     mini-svg-data-uri "^1.2.3"
     p-queue "^2.4.2"
