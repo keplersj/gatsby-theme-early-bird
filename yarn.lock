@@ -8826,14 +8826,14 @@ gatsby-transformer-sharp@^2.8.0:
     semver "^7.3.2"
     sharp "^0.26.3"
 
-gatsby-transformer-sqip@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-sqip/-/gatsby-transformer-sqip-2.6.1.tgz#1b79cfeac5641375a08bdb63861db9ee62beee38"
-  integrity sha512-fTfjDUCHkVQ1hhWrIod2exzuRHAvYp6xEU/f1AL90I6ukH+A9QvBpxJt19gpBfWdEQ3xyRaDtxEbVRqtDZvXRw==
+gatsby-transformer-sqip@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sqip/-/gatsby-transformer-sqip-2.7.0.tgz#57b985c9f943011c775fb1b72c8aa9fc25240901"
+  integrity sha512-m4UTNl+zAjh5jelq5gn5WBOnPckpP6hN4ZAzkt6OM2Yfiqg8arXY83En1h1K9HdRKwwZEyr8lC5sPCuW8MJLUA==
   dependencies:
     "@babel/runtime" "^7.12.5"
     fs-extra "^8.1.0"
-    gatsby-plugin-sharp "^2.9.1"
+    gatsby-plugin-sharp "^2.10.0"
     md5-file "^5.0.0"
     mini-svg-data-uri "^1.2.3"
     p-queue "^6.6.2"
