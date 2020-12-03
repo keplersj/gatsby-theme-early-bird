@@ -8556,7 +8556,7 @@ gatsby-plugin-react-helmet-async@^1.1.0:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet-async/-/gatsby-plugin-react-helmet-async-1.1.0.tgz#680995b67588a4d4de1f63e41bd929e1f7fe1c86"
   integrity sha512-qJkFIcDKg9b27Z3tXp5uXugVzne2MEsTi4hIm5erTSlGmOIj2EuoKfC8Tc/bGUkHazbY71AUFAZj15aonAXPzw==
 
-gatsby-plugin-sharp@^2.10.0, gatsby-plugin-sharp@^2.9.1:
+gatsby-plugin-sharp@^2.10.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.10.0.tgz#65299b50cbd82a17334734f8ab1aa9c2435882f3"
   integrity sha512-ivR4gOdBYtJDsFzjS7VLKJ+ShFIEmDDy7BCKFeoHDslydHRWEGTKAWK1XQryaMWSaCkVWjeW+zPmpQS8Re6GfA==
@@ -17231,10 +17231,10 @@ scheduler@^0.20.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-schema-dts@^0.8.1:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-0.8.1.tgz#db04845d26377c5a8de15e87afc97c9047127c59"
-  integrity sha512-GlLkN812img1pWqkTlhCKIuABF0s8aXqmyD5wUaeGWMJ7tvEYFJ4xdGABlVs7yEEtNwVrOXMWGMJhnY7z/hYUA==
+schema-dts@^0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-0.8.2.tgz#4a478eec4119023456e3c41b23744af69ff7a8fc"
+  integrity sha512-whRg7QF9wmPfrwAi4NRT/bjMBIdHvzpr4excNN00hn+U2aFXx9NB3JKfooUMJLDqpGEqnZpA61f5muw9lQ50ZA==
 
 schema-utils@^0.4.5:
   version "0.4.7"
