@@ -19839,10 +19839,10 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-uri-path-breakdown@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/uri-path-breakdown/-/uri-path-breakdown-1.0.11.tgz#20ff194cd733f6e13a2de0a7f8de5f79b602e924"
-  integrity sha512-PSfP3jasAGetsfBb+OgZEMnH4nhKHCBzLU4rGG016WcMLJYgnJROPnj49Q75MJKvIcIC+KISjSPSRO+ZHPeGXA==
+uri-path-breakdown@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/uri-path-breakdown/-/uri-path-breakdown-1.0.12.tgz#608ff2a7cf2415b4b508260bfb8c41e0e6a74ea2"
+  integrity sha512-evzia9eJ7ZZFl4XFM0FBdoMaLX6HkSI/GB9iUTzZnGIqdIRGFnnzRBrZbmBbXiNyuAx6wYWpm4xwPoEZE08EeQ==
   dependencies:
     uri-js "^4.2.2"
 
