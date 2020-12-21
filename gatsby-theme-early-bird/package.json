@@ -73,7 +73,7 @@
     "schema-dts": "^0.8.2",
     "slugify": "^1.4.6",
     "starstuff-components": "^2.1.34",
-    "starstuff-style": "^1.1.10",
+    "starstuff-style": "^1.1.11",
     "styled-components": "^5.2.1",
     "tinacms": "^0.22.1",
     "typescript": "^4.1.3",
