@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Blog Post List Item renders correctly 1`] = `
-.emotion-1 {
+.emotion-0 {
   margin: 1em;
-  background-color: rgba(var(--starstuff-card-default-background-color),0.5);
+  background-color: rgba(var(--starstuff-card-default-background-color), 0.5);
   border-radius: 10px;
-  box-shadow: 0.5em 0.5em 0.75em rgba(var(--starstuff-card-default-shadow-color),0.3);
+  box-shadow: 0.5em 0.5em 0.75em rgba(var(--starstuff-card-default-shadow-color), 0.3);
   -webkit-transition: box-shadow 1s;
   transition: box-shadow 1s;
   --starstuff-card-default-background-color: 245,245,245;
@@ -16,34 +16,34 @@ exports[`Blog Post List Item renders correctly 1`] = `
   display: flex;
 }
 
-.emotion-1:active,
-.emotion-1:focus,
-.emotion-1:focus-within,
-.emotion-1:hover {
-  box-shadow: 0.8em 0.8em 1em rgba(var(--starstuff-card-default-shadow-color),0.4);
+.emotion-0:active,
+.emotion-0:focus,
+.emotion-0:focus-within,
+.emotion-0:hover {
+  box-shadow: 0.8em 0.8em 1em rgba(var(--starstuff-card-default-shadow-color), 0.4);
 }
 
-@media screen and (prefers-color-scheme:dark) {
-  .emotion-1 {
+@media screen and (prefers-color-scheme: dark) {
+  .emotion-0 {
     --starstuff-card-default-background-color: 55,55,55;
   }
 }
 
-@media screen and (min-width:512px) {
-  .emotion-1 {
+@media screen and (min-width: 512px) {
+  .emotion-0 {
     min-height: 192px;
   }
 }
 
-@media screen and (max-width:512px) {
-  .emotion-1 {
+@media screen and (max-width: 512px) {
+  .emotion-0 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
   }
 }
 
-.emotion-0 {
+.emotion-1 {
   margin: 1rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -53,13 +53,13 @@ exports[`Blog Post List Item renders correctly 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
   -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
 }
 
 <div
-  className="emotion-1"
+  className="emotion-0"
 >
   <script
     type="application/ld+json"
@@ -75,7 +75,7 @@ exports[`Blog Post List Item renders correctly 1`] = `
   }
   </script>
   <div
-    className="emotion-0"
+    className="emotion-1"
   >
     <a
       href="/test"

@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Posts Page Component renders as expected 1`] = `
-.emotion-6 {
+.emotion-0 {
   max-width: 55em;
   margin-left: auto;
   margin-right: auto;
 }
 
-@media (max-width:55em) {
-  .emotion-6 {
+@media (max-width: 55em) {
+  .emotion-0 {
     margin-left: 2em;
     margin-right: 2em;
   }
@@ -16,9 +16,9 @@ exports[`Posts Page Component renders as expected 1`] = `
 
 .emotion-1 {
   margin: 1em;
-  background-color: rgba(var(--starstuff-card-default-background-color),0.5);
+  background-color: rgba(var(--starstuff-card-default-background-color), 0.5);
   border-radius: 10px;
-  box-shadow: 0.5em 0.5em 0.75em rgba(var(--starstuff-card-default-shadow-color),0.3);
+  box-shadow: 0.5em 0.5em 0.75em rgba(var(--starstuff-card-default-shadow-color), 0.3);
   -webkit-transition: box-shadow 1s;
   transition: box-shadow 1s;
   --starstuff-card-default-background-color: 245,245,245;
@@ -33,22 +33,22 @@ exports[`Posts Page Component renders as expected 1`] = `
 .emotion-1:focus,
 .emotion-1:focus-within,
 .emotion-1:hover {
-  box-shadow: 0.8em 0.8em 1em rgba(var(--starstuff-card-default-shadow-color),0.4);
+  box-shadow: 0.8em 0.8em 1em rgba(var(--starstuff-card-default-shadow-color), 0.4);
 }
 
-@media screen and (prefers-color-scheme:dark) {
+@media screen and (prefers-color-scheme: dark) {
   .emotion-1 {
     --starstuff-card-default-background-color: 55,55,55;
   }
 }
 
-@media screen and (min-width:512px) {
+@media screen and (min-width: 512px) {
   .emotion-1 {
     min-height: 192px;
   }
 }
 
-@media screen and (max-width:512px) {
+@media screen and (max-width: 512px) {
   .emotion-1 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
@@ -56,7 +56,7 @@ exports[`Posts Page Component renders as expected 1`] = `
   }
 }
 
-.emotion-0 {
+.emotion-2 {
   margin: 1rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -66,29 +66,29 @@ exports[`Posts Page Component renders as expected 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
   -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
 }
 
-.emotion-3 {
+.emotion-4 {
   height: 100%;
   min-width: 256px;
 }
 
-@media screen and (max-width:321px) {
-  .emotion-3 {
+@media screen and (max-width: 321px) {
+  .emotion-4 {
     display: none;
   }
 }
 
-.emotion-2 {
+.emotion-5 {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
-@media screen and (max-width:512px) {
-  .emotion-2 {
+@media screen and (max-width: 512px) {
+  .emotion-5 {
     border-bottom-left-radius: 0;
     border-top-right-radius: 10px;
   }
@@ -115,7 +115,7 @@ exports[`Posts Page Component renders as expected 1`] = `
   }
   </script>
   <div
-    className="emotion-6"
+    className="emotion-0"
   >
     <script
       type="application/ld+json"
@@ -157,7 +157,7 @@ exports[`Posts Page Component renders as expected 1`] = `
         }
         </script>
         <div
-          className="emotion-0"
+          className="emotion-2"
         >
           <a
             href="/2019-12-24-test-post-without-featured-image"
@@ -199,7 +199,7 @@ exports[`Posts Page Component renders as expected 1`] = `
           href="/2019-12-24-test-post-with-featured-image"
         >
           <figure
-            className="emotion-3"
+            className="emotion-4"
           >
             <script
               type="application/ld+json"
@@ -214,9 +214,11 @@ exports[`Posts Page Component renders as expected 1`] = `
             }
             </script>
             <div
-              className="emotion-2 gatsby-image-wrapper"
+              className="emotion-5 gatsby-image-wrapper"
               style={
                 Object {
+                  "maxHeight": null,
+                  "maxWidth": null,
                   "overflow": "hidden",
                   "position": "relative",
                 }
@@ -287,7 +289,7 @@ exports[`Posts Page Component renders as expected 1`] = `
           </figure>
         </a>
         <div
-          className="emotion-0"
+          className="emotion-2"
         >
           <a
             href="/2019-12-24-test-post-with-featured-image"

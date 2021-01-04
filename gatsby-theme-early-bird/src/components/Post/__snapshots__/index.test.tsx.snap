@@ -7,7 +7,7 @@ exports[`Post Page Component renders as expected (with a featured image) 1`] = `
   margin-right: auto;
 }
 
-@media (max-width:55em) {
+@media (max-width: 55em) {
   .emotion-0 {
     margin-left: 2em;
     margin-right: 2em;
@@ -93,6 +93,8 @@ exports[`Post Page Component renders as expected (with a featured image) 1`] = `
           className=" gatsby-image-wrapper"
           style={
             Object {
+              "maxHeight": null,
+              "maxWidth": null,
               "overflow": "hidden",
               "position": "relative",
             }
@@ -220,7 +222,7 @@ exports[`Post Page Component renders as expected (without a featured image) 1`] 
   margin-right: auto;
 }
 
-@media (max-width:55em) {
+@media (max-width: 55em) {
   .emotion-0 {
     margin-left: 2em;
     margin-right: 2em;

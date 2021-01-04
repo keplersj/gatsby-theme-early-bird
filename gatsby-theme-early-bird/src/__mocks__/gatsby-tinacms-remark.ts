@@ -1,4 +1,4 @@
-const gatsbyTinaCMSRemark = require.requireActual("gatsby-tinacms-remark");
+const gatsbyTinaCMSRemark = jest.requireActual("gatsby-tinacms-remark");
 
 export const remarkForm = jest
   .fn()

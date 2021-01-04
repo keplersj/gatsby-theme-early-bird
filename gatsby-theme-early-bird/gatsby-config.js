@@ -55,6 +55,7 @@ module.exports = (themeOptions) => {
       `gatsby-transformer-sharp`,
       `gatsby-plugin-sharp`,
       "gatsby-plugin-react-helmet-async",
+      "gatsby-plugin-emotion",
       {
         resolve: "gatsby-plugin-feed",
         options: {
