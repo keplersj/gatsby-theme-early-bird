@@ -8549,7 +8549,7 @@ gatsby-plugin-react-helmet-async@^1.1.0:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet-async/-/gatsby-plugin-react-helmet-async-1.1.0.tgz#680995b67588a4d4de1f63e41bd929e1f7fe1c86"
   integrity sha512-qJkFIcDKg9b27Z3tXp5uXugVzne2MEsTi4hIm5erTSlGmOIj2EuoKfC8Tc/bGUkHazbY71AUFAZj15aonAXPzw==
 
-gatsby-plugin-sharp@^2.12.0, gatsby-plugin-sharp@^2.12.1:
+gatsby-plugin-sharp@^2.12.1:
   version "2.12.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.12.1.tgz#6cc67299ab7555187c9be12de38b3b3c595cccd8"
   integrity sha512-peqF1m5OWk7i0sikiiaLgIlj14ysaPLLFQ9gEit1lL24NaBr0U97h1kXQpl4cyGdozXi//tkv1eN/cFl/9IQZQ==
@@ -8732,7 +8732,7 @@ gatsby-source-filesystem@^2.9.0:
     valid-url "^1.0.9"
     xstate "^4.14.0"
 
-gatsby-telemetry@^1.8.0, gatsby-telemetry@^1.8.1:
+gatsby-telemetry@^1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.8.1.tgz#c9fefb0a16d437c9ddb4722fd92909c390bf0c4e"
   integrity sha512-Az+2rArUf2Qxef6dOxYIo6SadRSFHWCckZGThiedwWguvjz4WLF4G4d7k1q/6BvzIu+tk/SrH+/fQ/Un6WOXPQ==
@@ -8812,14 +8812,14 @@ gatsby-transformer-sharp@^2.10.1:
     semver "^7.3.4"
     sharp "^0.27.0"
 
-gatsby-transformer-sqip@^2.9.0:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-sqip/-/gatsby-transformer-sqip-2.9.0.tgz#04e6ba64661c39b28d441a71d3e2cb292e38d33b"
-  integrity sha512-f+tjJ9aJ2XQyxvWo4KkUEmhIeLrDabSfbrG4ePPm+uE4FivgzoUeJ7XEAeiFBDdpozZa4J99F34EGLVd78S+/w==
+gatsby-transformer-sqip@^2.9.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sqip/-/gatsby-transformer-sqip-2.9.1.tgz#cb78025e796d984824ab9bae543d61813d1226ef"
+  integrity sha512-JlSWNu4sa8dXkZJd6ObVlFJMScZxRK2TCXNxXakiQVZQD+VkIbnlDng51UlOPjb4oct3rBLh6ydQyO0+jZu2sA==
   dependencies:
     "@babel/runtime" "^7.12.5"
     fs-extra "^8.1.0"
-    gatsby-plugin-sharp "^2.12.0"
+    gatsby-plugin-sharp "^2.12.1"
     md5-file "^5.0.0"
     mini-svg-data-uri "^1.2.3"
     p-queue "^6.6.2"
