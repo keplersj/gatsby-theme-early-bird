@@ -20162,10 +20162,10 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-uri-path-breakdown@^1.0.15:
-  version "1.0.15"
-  resolved "https://registry.yarnpkg.com/uri-path-breakdown/-/uri-path-breakdown-1.0.15.tgz#150d29f6b0527dfe8139e5da077f87cd8fd0c735"
-  integrity sha512-9TWIeYYPnf3bAJB+KnePdjZ993dc18OM+SxrRYFrwXkG4nZFBiYI+tZaWKgqZJpKZxrZCKUGz2tEsZIcpohDaw==
+uri-path-breakdown@^1.0.16:
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/uri-path-breakdown/-/uri-path-breakdown-1.0.16.tgz#f713581bc184ebadbaa4950ae4925cc9bfdd7a25"
+  integrity sha512-IAfvu8As1gZx3oHZZyC3Cv4HsLE0SAlxaFnpUyE09JJBRiv8cX9+36MuVFqjjMuNan3iBYpWl4phpkjOVqkpqA==
   dependencies:
     uri-js "^4.2.2"
 
