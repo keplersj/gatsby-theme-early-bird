@@ -1,0 +1,58 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "12:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: gatsby-transformer-sqip
+    versions:
+    - 3.0.0
+    - 3.0.1
+    - 3.1.0
+    - 3.1.1
+    - 3.1.2
+    - 3.1.3
+    - 3.2.0
+    - 3.2.1
+    - 3.3.0
+    - 3.3.1
+  - dependency-name: gatsby-plugin-sharp
+    versions:
+    - 2.14.0
+    - 2.14.2
+    - 3.0.0
+    - 3.0.1
+    - 3.1.0
+    - 3.1.1
+    - 3.1.2
+    - 3.1.3
+    - 3.2.0
+    - 3.2.1
+    - 3.3.0
+    - 3.3.1
+  - dependency-name: gatsby
+    versions:
+    - 3.2.0
+    - 3.3.0
+  - dependency-name: tinacms
+    versions:
+    - 0.36.1
+    - 0.38.0
+    - 0.39.0
+  - dependency-name: gatsby-plugin-tinacms
+    versions:
+    - 0.38.0
+    - 0.39.0
+  - dependency-name: starstuff-components
+    versions:
+    - 2.1.43
+  - dependency-name: gatsby-plugin-typescript
+    versions:
+    - 3.1.0
+  commit-message:
+    prefix: fix
+    prefix-development: chore
+    include: scope
