@@ -64,7 +64,7 @@
     "gatsby-remark-smartypants": "^4.4.1",
     "gatsby-source-filesystem": "^3.7.1",
     "gatsby-tinacms-git": "^0.41.0",
-    "gatsby-tinacms-remark": "^0.41.0",
+    "gatsby-tinacms-remark": "^0.41.1",
     "gatsby-transformer-remark": "^4.4.1",
     "gatsby-transformer-sharp": "^3.7.1",
     "gatsby-transformer-sqip": "^2.11.3",
