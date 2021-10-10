@@ -82,8 +82,8 @@
   },
   "peerDependencies": {
     "gatsby": "^2.13.13",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "^16.8.6 || ^17.0.2",
+    "react-dom": "^16.8.6 || ^17.0.2"
   },
   "stylelint": {
     "extends": [
